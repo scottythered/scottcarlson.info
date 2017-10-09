@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="keywords" content="scott carlson, metadata, librarian, metadata librarian, archives, archivist, repositories, vinyl, grateful dead, frodis records, indie preserves" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Yes, you should make a Twitter bot to promote your gallery/library/archival/museum Digital Collection(s). I'll show you how.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You Should Make a Twitter Bot for Your G/L/A/M's Digital Collection(s)</title>
+  <title>You Should Make a Twitter Bot for Your Digital Collection(s) | Scott Carlson</title>
   <link rel="stylesheet" href="css/main.css">
+  <meta property="og:image" content="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/1732834818.jpg" />
+<meta property="og:title" content="You Should Make a Twitter Bot for Your Digital Collection(s)" />
+<meta property="og:description" content="Yes, you should make a Twitter bot to promote your gallery/library/archival/museum Digital Collection(s). I'll show you how." />
+<meta property="og:url" content="http://www.scottcarlson.info/you-should-make-a-twitter-bot/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Scott Carlson"/>
+<meta name="twitter:site" content="@scottythered">
+<meta name="twitter:title" content="You Should Make a Twitter Bot for Your Digital Collection(s)">
+<meta name="twitter:description" content="Yes, you should make a Twitter bot to promote your gallery/library/archival/museum Digital Collection(s). I'll show you how.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/1732834818.jpg">
+<meta name="twitter:creator" content="@scottythered">
 
 </head>
 <body>
@@ -128,8 +141,8 @@ api.update_status(tweet)
 <p>For example, let’s set up a list of tweets we want to send. Each tweet includes the description of a digital collection item along with the link to the item. We’ll store these tweets in a JSON file, with each tweet being a value of an array:</p>
 
 <p><em>[json file name]</em>:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">  
-   </span><span class="nt">"tweets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"tweets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"Lecture in Faculty Chamber, at Formal Opening of Rice Institute. Find it at: http://hdl.handle.net/1911/64453"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"George R. Brown, portrait. Find it at: http://hdl.handle.net/1911/64454"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"Rice Institute Commencement procession. Find it at: http://hdl.handle.net/1911/64457"</span><span class="p">,</span><span class="w">
@@ -258,17 +271,17 @@ for tweet in tweets:
 
 <p>Using our previous JSON example as a starting point, we’ll create an array of JSON objects that include the texts of our tweets along with the direct link to our images:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">  
-   </span><span class="nt">"tweets"</span><span class="p">:[</span><span class="w">  
-      </span><span class="p">{</span><span class="w">  
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"tweets"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
          </span><span class="nt">"text"</span><span class="p">:</span><span class="s2">"Lecture in Faculty Chamber, at Formal Opening of Rice Institute. Find it at: http://hdl.handle.net/1911/64453"</span><span class="p">,</span><span class="w">
          </span><span class="nt">"img"</span><span class="p">:</span><span class="s2">"https://scholarship.rice.edu/bitstream/handle/1911/64453/wrc00005.jpg"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">  
+      </span><span class="p">{</span><span class="w">
          </span><span class="nt">"text"</span><span class="p">:</span><span class="s2">"George R. Brown, portrait. Find it at: http://hdl.handle.net/1911/64454"</span><span class="p">,</span><span class="w">
          </span><span class="nt">"img"</span><span class="p">:</span><span class="s2">"https://scholarship.rice.edu/bitstream/handle/1911/64454/wrc01588.jpg"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">  
+      </span><span class="p">{</span><span class="w">
          </span><span class="nt">"text"</span><span class="p">:</span><span class="s2">"Rice Institute Commencement procession. Find it at: http://hdl.handle.net/1911/64457"</span><span class="p">,</span><span class="w">
          </span><span class="nt">"img"</span><span class="p">:</span><span class="s2">"https://scholarship.rice.edu/bitstream/handle/1911/64457/wrc01693.jpg"</span><span class="w">
       </span><span class="p">},</span><span class="w">
