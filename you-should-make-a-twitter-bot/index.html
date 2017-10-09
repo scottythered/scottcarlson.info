@@ -23,14 +23,14 @@
 
 </head>
 <body>
-  <div class="topnav">
+<div class="topnav">
   <a class="active" href="http://www.scottcarlson.info/">Home</a>
   <a href="http://www.scottcarlson.info/about.html">About</a>
   <a href="http://www.scottcarlson.info/publications.html">Publications</a>
   <a href="http://www.scottcarlson.info/presentations.html">Presentations</a>
   <a href="http://www.scottcarlson.info/contact.html">Contact</a>
-  </div>
-  <div class="container">
+</div>
+<div class="container">
     <h1><a href="./">You Should Make a Twitter Bot for Your G/L/A/M's Digital Collection(s)</a></h1>
     <p>Yeah, why not? Despite the <a href="http://mashable.com/2017/09/25/russia-botnet-german-election-twitter/#GSp1JDZANiqN">bad rap bots are deservedly getting</a>, Twitter bots <a href="https://techcrunch.com/2017/09/25/researchers-find-that-twitter-bots-can-be-used-for-good/">can either be entertaining</a> or a source of good, especially for galleries, libraries, archives, and museums with digital collections. I’ve found the general public doesn’t understand what cool things can be found in digital repositories and archives, much less know they exist. We can work to change that by putting our collections out there in a public setting for people to discover. In the process, you’ll build a Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag).</p>
 
@@ -468,7 +468,18 @@ with open('index.txt', 'w') as indexNew:
 
 <p><em>I am Scott Carlson, the Metadata Coordinator of Fondren Library at Rice University. I received my MLIS from Dominican University (River Forest, IL) and an Archives Certificate in Digital Stewardship from Simmons College (Boston, MA). This guide was written to music by James Brown.</em></p>
 
-  </div>
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
 
 </body>
 </html>
