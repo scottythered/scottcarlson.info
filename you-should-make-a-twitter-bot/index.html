@@ -23,9 +23,21 @@
 
 </head>
 <body>
-<div class="container">
+  <div class="container">
     <h1><a href="./">You Should Make a Twitter Bot for Your G/L/A/M's Digital Collection(s)</a></h1>
-    <p>Yeah, why not? Despite the <a href="http://mashable.com/2017/09/25/russia-botnet-german-election-twitter/#GSp1JDZANiqN">bad rap bots are deservedly getting</a>, Twitter bots <a href="https://techcrunch.com/2017/09/25/researchers-find-that-twitter-bots-can-be-used-for-good/">can either be entertaining</a> or a source of good, especially for galleries, libraries, archives, and museums with digital collections. I’ve found the general public doesn’t understand what cool things can be found in digital repositories and archives, much less know they exist. We can work to change that by putting our collections out there in a public setting for people to discover. In the process, you’ll build a Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag).</p>
+    <p><img src="img/bar.png" alt="bar" /></p>
+
+<p>Yeah, why not? Despite the <a href="http://mashable.com/2017/09/25/russia-botnet-german-election-twitter/#GSp1JDZANiqN">bad rap some bots are (deservedly) getting</a>, Twitter bots <a href="https://techcrunch.com/2017/09/25/researchers-find-that-twitter-bots-can-be-used-for-good/">can either be entertaining</a> or a source of good, especially for galleries, libraries, archives, and museums with digital collections.</p>
+
+<p>I’ve found the general public doesn’t understand what cool things can be found in digital repositories and archives, much less know they exist. We can work to change that by putting our collections out there in a public setting for people to discover. This was the reason we built a Twitter bot to show off the digital collections of Rice University’s Woodson Research Center.</p>
+
+<p><br /></p>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">KTRU Rice University radio poster for 19th annual Outdoor Show. Find it at: <a href="https://t.co/GKd2IoAl1H">https://t.co/GKd2IoAl1H</a> <a href="https://t.co/W9EhzlwVur">pic.twitter.com/W9EhzlwVur</a></p>&mdash; WoodsonResearchCentr (@WoodsonRC_bot) <a href="https://twitter.com/WoodsonRC_bot/status/914868088738336769?ref_src=twsrc%5Etfw">October 2, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><br /></p>
+
+<p>In this single-page instruction guide, you’ll build a Python Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag).</p>
 
 <h2 id="things-you-will-need">Things You will Need:</h2>
 
@@ -94,10 +106,10 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
 from tweepy import API
 
-consumer_key="xxxxxxxxxxxxxxxxxxxxxxxxx"
-consumer_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token="xxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+consumer_key="XXXXXXXXXXX"
+consumer_secret="XXXXXXXXXXX"
+access_token="XXXXXXXXXXX"
+access_token_secret="XXXXXXXXXXX"
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -120,10 +132,10 @@ for tweet in public_tweets:
 <div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
 from tweepy import API
 
-consumer_key="xxxxxxxxxxxxxxxxxxxxxxxxx"
-consumer_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token="xxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+consumer_key="XXXXXXXXXXX"
+consumer_secret="XXXXXXXXXXX"
+access_token="XXXXXXXXXXX"
+access_token_secret="XXXXXXXXXXX"
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -140,7 +152,6 @@ api.update_status(tweet)
 
 <p>For example, let’s set up a list of tweets we want to send. Each tweet includes the description of a digital collection item along with the link to the item. We’ll store these tweets in a JSON file, with each tweet being a value of an array:</p>
 
-<p><em>[json file name]</em>:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
    </span><span class="nt">"tweets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"Lecture in Faculty Chamber, at Formal Opening of Rice Institute. Find it at: http://hdl.handle.net/1911/64453"</span><span class="p">,</span><span class="w">
@@ -155,7 +166,7 @@ api.update_status(tweet)
 </span></code></pre>
 </div>
 
-<p>Let’s modify our existing script to parse the JSON file to get the tweets. First, we’ll need to add to the header:</p>
+<p>Let’s modify our existing script to parse the JSON file to get the tweets. First, we’ll need to add the JSON module to the header:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
 from tweepy import API
@@ -209,16 +220,16 @@ from tweepy import API
 import json
 from time import sleep
 
-consumer_key="xxxxxxxxxxxxxxxxxxxxxxxxx"
-consumer_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token="xxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+consumer_key="XXXXXXXXXXX"
+consumer_secret="XXXXXXXXXXX"
+access_token="XXXXXXXXXXX"
+access_token_secret="XXXXXXXXXXX"
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = API(auth)
 
-json_input = open('[json file name]')
+json_input = open('[JSON file]')
 data = json.load(json_input)
 tweets = data["tweets"]
 
@@ -227,6 +238,8 @@ for tweet in tweets:
       sleep(1800)
 </code></pre>
 </div>
+
+<p>(<a href="https://gist.github.com/scottythered/0eb069181e1f0a503d0bb4ecaa9823fa">Gist version</a>)</p>
 
 <h2 id="pardon-me-while-i-have-a-metadata-interlude">Pardon Me While I Have a Metadata Interlude</h2>
 
@@ -334,16 +347,16 @@ from time import sleep
 import urllib.request
 import os
 
-consumer_key="xxxxxxxxxxxxxxxxxxxxxxxxx"
-consumer_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token="xxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+consumer_key="XXXXXXXXXXX"
+consumer_secret="XXXXXXXXXXX"
+access_token="XXXXXXXXXXX"
+access_token_secret="XXXXXXXXXXX"
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = API(auth
+api = API(auth)
 
-json_input = open('[json file name]')
+json_input = open('[json file]')
 data = json.load(json_input)
 
 for x in data['tweets']:
@@ -351,9 +364,11 @@ for x in data['tweets']:
   filename = ('image-temp.jpg')
   api.update_with_media(filename, status=x['text'])
   os.remove(filename)
-	sleep(1800)
+  sleep(1800)
 </code></pre>
 </div>
+
+<p>(<a href="https://gist.github.com/scottythered/c044435bcccba1e301c0c44b631d3b8c">Gist version</a>)</p>
 
 <p>Of course, JSON isn’t the only way to do this. You could set a script to read from a CSV with two columns, img and tweet:</p>
 
@@ -364,14 +379,14 @@ import os
 import csv
 from time import sleep
 
-consumer_key="xxxxxxxxxxxxxxxxxxxxxxxxx"
-consumer_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token="xxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+consumer_key="XXXXXXXXXXX"
+consumer_secret="XXXXXXXXXXX"
+access_token="XXXXXXXXXXX"
+access_token_secret="XXXXXXXXXXX"
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = API(auth
+api = API(auth)
 
 csvfile = open('[csv file name]')
 reader = csv.reader(csvfile)
@@ -409,20 +424,20 @@ import urllib.request
 import os
 import json
 
-consumer_key="xxxxxxxxxxxxxxxxxxxxxxxxx"
-consumer_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token="xxxxxxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-access_token_secret="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+consumer_key="XXXXXXXXXXX"
+consumer_secret="XXXXXXXXXXX"
+access_token="XXXXXXXXXXX"
+access_token_secret="XXXXXXXXXXX"
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
-api = API(auth
+api = API(auth)
 
 with open('index.txt', 'r') as indexNmr:
 	vari = int(indexNmr.read().strip())
 	indexNmr.close()
 
-json_input = open('[json file name]')
+json_input = open('[JSON file]')
 data = json.load(json_input)
 urllib.request.urlretrieve(data['tweets'][vari]['img'], 'image-temp.jpg')
 filename = ('image-temp.jpg')
@@ -434,10 +449,12 @@ except:
 	print('Error, baby.')
 
 with open('index.txt', 'w') as indexNew:
-	indexNew.write("%d" % (vari_line + 1))
+	indexNew.write("%d" % (vari + 1))
 	indexNew.close()
 </code></pre>
 </div>
+
+<p>(<a href="https://gist.github.com/scottythered/3f4f2aa553c914eb1b50b24b23da886b">Gist version</a>)</p>
 
 <p>The beauty of this method is that the script can run without relying on the <code class="highlighter-rouge">sleep</code> function. And since only it only performs one run-through each time, we can now schedule it to run as often or as infrequently as we like.</p>
 
@@ -459,7 +476,7 @@ with open('index.txt', 'w') as indexNew:
 
 <p><img src="img/twit4.png" alt="twit4" /></p>
 
-<p><em>I am Scott Carlson, the Metadata Coordinator of Fondren Library at Rice University. I received my MLIS from Dominican University (River Forest, IL) and an Archives Certificate in Digital Stewardship from Simmons College (Boston, MA). This guide was written to music by James Brown.</em></p>
+<p><em>I am Scott Carlson, the Metadata Coordinator of Fondren Library at Rice University. I received my MLIS from Dominican University (River Forest, IL) and an Archives Certificate in Digital Stewardship from Simmons College (Boston, MA).</em></p>
 
 <h2><a href="http://scottcarlson.info">Home</a></h2>
 
