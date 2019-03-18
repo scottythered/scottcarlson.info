@@ -13148,11 +13148,11 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Eyeballing-in-Excel">Eyeballing in Excel<a class="anchor-link" href="#Eyeballing-in-Excel">&#182;</a></h2><p>In Excel, I see the following:</p>
 <ul>
-<li><p>The entirety of the data is on a primary sheet ('InvExport_All'), with a second, empty sheet ('Sheet1'). I delete the empty sheet and take note of the primary sheet's title.</p>
+<li><p>The entirety of the data is on a primary sheet (<code>InvExport_All</code>), with a second, empty sheet (<code>Sheet1</code>). I delete the empty sheet and take note of the primary sheet's title.</p>
 </li>
 <li><p>Row 1 of the primary sheet appears to be a blank row filled with a color, followed by the header row. I remove this empty row so that the headers can be correctly parsed later on.</p>
 </li>
-<li><p>Column A ('Row') a numeric column with sequential numbers, starting from 1 until 5650. Normally I would remove this column -- it repeats the automatic row numbering in OpenRefine and clashes with the zero-based indexing of rows in Pandas. However, I will not not in this instance, for reasons I will elaborate on later.</p>
+<li><p>Column A (<code>Row</code>) a numeric column with sequential numbers, starting from 1 until 5650. Normally I would remove this column -- it repeats the automatic row numbering in OpenRefine and clashes with the zero-based indexing of rows in Pandas. However, I will not not in this instance, for reasons I will elaborate on later.</p>
 </li>
 </ul>
 
@@ -13374,7 +13374,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>df.info()</code> tells us quite a bit about the data. First, I see that only 2 of the column datatypes are all-numeric; the rest are objects (either a mixture of numbers and strings, or wholly strings). Text strings would be expected with columns like 'Description' and 'Condition', but what about 'Part Number'? Tag that with a mental note.</p>
+<p><code>df.info()</code> tells us quite a bit about the data. First, I see that only 2 of the column datatypes are all-numeric; the rest are objects (either a mixture of numbers and strings, or wholly strings). Text strings would be expected with columns like <code>Description</code> and <code>Condition</code>, but what about <code>Part Number</code>? Tag that with a mental note.</p>
 <p>Also, a handful of columns (Part Number, Manufacture, Description, Process, and Condition) all are slightly less than the total number of rows, meaning we've got some null values.</p>
 
 </div>
@@ -13383,7 +13383,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now I want to sample some of the data; 'Manufacture' seems like a good place to start.</p>
+<p>Now I want to sample some of the data; <code>Manufacture</code> seems like a good place to start.</p>
 
 </div>
 </div>
@@ -13483,7 +13483,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Once the data is passed into OpenRefine, we can confirm that 'Part Number' is a mixture of strings and intergers through a Numeric Facet (shown above). However, if we try collapsing and removing unnecessary whitespace now, our integer values in mixed-value columns will be converted to strings in scientific notation:</p>
+<p>Once the data is passed into OpenRefine, we can confirm that <code>Part Number</code> is a mixture of strings and intergers through a Numeric Facet (shown above). However, if we try collapsing and removing unnecessary whitespace now, our integer values in mixed-value columns will be converted to strings in scientific notation:</p>
 <p><code>41300420</code>  will become  <code>4.130042E7</code></p>
 <p>We will need to do the following to all 'object' columns:</p>
 <ol>
@@ -13501,7 +13501,7 @@ memory usage: 529.8+ KB
 </ol>
 
 <pre><code>value.replace(/\\s+/,' ')</code></pre>
-<p>We could do this as repetitive transformation commands in OpenRefine, or we could automate it in Refine's Apply Operation History function, with a little help from Python.</p>
+<p>We could do this as repetitive transformation commands in OpenRefine, or we could automate it in Refine's <em>Apply Operation History</em> function, with a little help from Python.</p>
 
 </div>
 </div>
@@ -13623,9 +13623,9 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Columns-Successfully-Cleaned">Columns Successfully Cleaned<a class="anchor-link" href="#Columns-Successfully-Cleaned">&#182;</a></h3><p><strong>Process</strong>: reduced x unique values to 17. Process had one null value in it; I changed this null to "Other Items," based on classification of similar items in the column.</p>
-<p><strong>Condition</strong>: reduced x unique values to 5. Condition had two null values; since neither had an eBay link, I changed these to "Unknown," a more literal and explicit description of the situation. Another column value -- 'NA'  -- was changed to "Used," based on metadata in its eBay listing.</p>
-<p><strong>Manufacture</strong>: Originally, this column was reduced from x unique values to 27; however, this still left 26 rows with null values. I entered these manufacturer names by hand, as every one of them had an eBay listing; this brought the unique values to 32.</p>
+<h3 id="Columns-Successfully-Cleaned">Columns Successfully Cleaned<a class="anchor-link" href="#Columns-Successfully-Cleaned">&#182;</a></h3><p><code>Process</code>: reduced x unique values to 17. Process had one null value in it; I changed this null to "Other Items," based on classification of similar items in the column.</p>
+<p><code>Condition</code>: reduced x unique values to 5. Condition had two null values; since neither had an eBay link, I changed these to "Unknown," a more literal and explicit description of the situation. Another column value -- 'NA'  -- was changed to "Used," based on metadata in its eBay listing.</p>
+<p><code>Manufacture</code>: Originally, this column was reduced from x unique values to 27; however, this still left 26 rows with null values. I entered these manufacturer names by hand, as every one of them had an eBay listing; this brought the unique values to 32.</p>
 
 </div>
 </div>
@@ -13633,8 +13633,8 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Columns-Attempted-But-Not-Fully-Cleaned">Columns Attempted But Not Fully Cleaned<a class="anchor-link" href="#Columns-Attempted-But-Not-Fully-Cleaned">&#182;</a></h3><p><strong>Web active</strong>: This column had just three unique values: eBay, 0 &amp; 1, I did not feel comfortable making changes without knowing what these numeric values meant.</p>
-<p><strong>Description</strong>: I attempted remediation but ultimately reversed my work after realizing that this information may need to remain the same, depending on where the item desciption was sourced from.</p>
+<h3 id="Columns-Attempted-But-Not-Fully-Cleaned">Columns Attempted But Not Fully Cleaned<a class="anchor-link" href="#Columns-Attempted-But-Not-Fully-Cleaned">&#182;</a></h3><p><code>Web active</code>: This column had just three unique values: eBay, 0 &amp; 1, I did not feel comfortable making changes without knowing what these numeric values meant.</p>
+<p><code>Description</code>: I attempted remediation but ultimately reversed my work after realizing that this information may need to remain the same, depending on where the item desciption was sourced from.</p>
 
 </div>
 </div>
@@ -13966,19 +13966,19 @@ memory usage: 529.8+ KB
 <p>Nevertheless, if it is possible to make changes to either the internal database or the submission from suppliers, I would put forth a few recommendations about the data's overall organizational structure:</p>
 <h4 id="Renaming-Columns"><strong>Renaming Columns</strong><a class="anchor-link" href="#Renaming-Columns">&#182;</a></h4><p>If possible, a few of the columns could be renamed:</p>
 <ul>
-<li><em>Manufacture</em> to <em>manufacturer</em> (it's a slight change but fixes a grammatical error)</li>
-<li><em>OPM</em> &amp; <em>OPM #</em> to original_part_manufacturer and original_part_manufacturer_no (or something similar, to make its meaning more explicit as well as removing the has/pound symbol from the header)</li>
+<li><code>Manufacture</code> to <code>Manufacturer</code> (it's a slight change but fixes a grammatical error)</li>
+<li><code>OPM</code> and <code>OPM #</code> to <em>original_part_manufacturer</em> and <em>original_part_manufacturer_no</em> (or something similar, to make its meaning more explicit as well as removing the has/pound symbol from the header)</li>
 </ul>
 <h4 id="Creation-of-Data-Dictionary"><strong>Creation of Data Dictionary</strong><a class="anchor-link" href="#Creation-of-Data-Dictionary">&#182;</a></h4><p>Much of what I saw in the dataset was explicit enough to understand, or easy enough to research. However, several columns left me with questions:</p>
 <ul>
-<li>AKA: I understood what this represents, but did not understand the handful of values that said "need to locate this part" -- probably best to move this a new notes column?</li>
-<li>Web active: As mentioned previously, this column had just three unique values: eBay, 0 &amp; 1. In addition, the "eBay" value is found in 648 rows, but only 487 rows have an eBay link.</li>
+<li><code>AKA</code>: I understood what this represents, but did not understand the handful of values that said "need to locate this part" -- probably best to move this a new notes column?</li>
+<li><code>Web active</code>: As mentioned previously, this column had just three unique values: eBay, 0 &amp; 1. In addition, the "eBay" value is found in 648 rows, but only 487 rows have an eBay link.</li>
 </ul>
 <p>My recommendation would be creating a data dictionary (also known as an Application Profile) to clearly define and delineate not only what each column represents, but what kinds of data and metadata should be used within it.</p>
-<h4 id="Separation-of-Data-Terms-from-Process-Column?"><strong>Separation of Data Terms from Process Column?</strong><a class="anchor-link" href="#Separation-of-Data-Terms-from-Process-Column?">&#182;</a></h4><p>I will be honest, I had a hard time figuring out the Process column until I combed through the spreadsheets for Question 2. Process column in the <strong>HC_InventoryList.xlsx</strong> spreadsheet appears to be a controlled list of different semiconductor manufacturing and production processes. However, in this dataset, these processes are joined by product-type metadata (PCBs, Harnesses/Cables, O-Rings, Manuals, etc.). If this is the case, then this data should be removed and remanded to a separate column with a controlled vocabulary for each entry. (See next section)</p>
-<h4 id="Controlled-Vocabularies-(Or-Foreign-Key-Links)"><strong>Controlled Vocabularies (Or Foreign Key Links)</strong><a class="anchor-link" href="#Controlled-Vocabularies-(Or-Foreign-Key-Links)">&#182;</a></h4><p>As I mentioned earlier, I would normally remove the "Rows" column -- it repeats the automatic row numbering in OpenRefine and clashes with the zero-based indexing of rows in Pandas. However, the row may be temporarily used as a de facto primary key for the table, uniquely identifying each row until it is imported into a database and given a unique ID.</p>
+<h4 id="Separation-of-Data-Terms-from-Process-Column?"><strong>Separation of Data Terms from Process Column?</strong><a class="anchor-link" href="#Separation-of-Data-Terms-from-Process-Column?">&#182;</a></h4><p>I will be honest, I had a hard time figuring out the <code>Process</code> column until I combed through the spreadsheets for Question 2. Process column in the <strong>HC_InventoryList.xlsx</strong> spreadsheet appears to be a controlled list of different semiconductor manufacturing and production processes. However, in this dataset, these processes are joined by product-type metadata (PCBs, Harnesses/Cables, O-Rings, Manuals, etc.). If this is the case, then this data should be removed and remanded to a separate column with a controlled vocabulary for each entry. (See next section)</p>
+<h4 id="Controlled-Vocabularies-(Or-Foreign-Key-Links)"><strong>Controlled Vocabularies (Or Foreign Key Links)</strong><a class="anchor-link" href="#Controlled-Vocabularies-(Or-Foreign-Key-Links)">&#182;</a></h4><p>As I mentioned earlier, I would normally remove the <code>Rows</code> column -- it repeats the automatic row numbering in OpenRefine and clashes with the zero-based indexing of rows in Pandas. However, the row may be temporarily used as a de facto primary key for the table, uniquely identifying each row until it is imported into a database and given a unique ID.</p>
 <p>Since I do not have access to Asseta's database, I also do not have a clear picture of how it is structured. If it is not already the case, I would recommend creating separate tables where unique elements found in the Manufacturer and Process columns can be expanded with additional data/metadata.</p>
-<p>If this is not already the case AND, for whatever reason, is not currently possible, I would at least recommend creating external controlled vocabularies for Manufacturer and Process data. The benefit of controlled vocabularies is that they can used to cut down on manual editing.</p>
+<p>If this is not already the case AND, for whatever reason, is not currently possible, I would at least recommend creating external controlled vocabularies for <code>Manufacturer</code> and <code>Process</code> data. The benefit of controlled vocabularies is that they can used to cut down on manual editing.</p>
 <p>For example: let's say we know the name of a manufacturer is constantly being entered incorrectly. In fact, we already do -- Applied Materials exists in the messy version of the dataset as <em>Appiled Materials</em>. Once such incorrect forms are caught, we track them however we please -- say, as a JSON object in an external file.</p>
 
 <pre><code>[
@@ -14394,8 +14394,8 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In addition, there are two unnamed columns, 'Unnamed: 8' and 'Unnamed: 4'.</p>
-<p>Let's look at 8 first:</p>
+<p>In addition, there are two unnamed columns, <code>Unnamed: 8</code> and <code>Unnamed: 4</code>.</p>
+<p>Let's look at <code>Unnamed: 8</code> first:</p>
 
 </div>
 </div>
@@ -14563,7 +14563,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>'Unnamed: 4', however is not empty. Near the tail of the table, values from the 'MODEL' are missing and found in 4:</p>
+<p><code>Unnamed: 4</code>, however is not empty. Near the tail of the table, values from the <code>MODEL</code> are missing and found in <code>Unnamed: 4</code>:</p>
 
 </div>
 </div>
@@ -14689,7 +14689,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can fill the null values from 'MODEL' witht hose from 'Unnamed: 4':</p>
+<p>We can fill the null values from <code>MODEL</code> with those from <code>Unnamed: 4</code>:</p>
 
 </div>
 </div>
@@ -14816,7 +14816,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>And now drop 'Unnamed: 4':</p>
+<p>And now drop <code>Unnamed: 4</code>:</p>
 
 </div>
 </div>
@@ -15077,7 +15077,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There's some numeric wonkiness with 'Seller_Asset<strong>c' and 'Vintage</strong>c', so let's reimport it with those two columns forced to an interger datatype:</p>
+<p>There's some numeric wonkiness with <code>Seller_Asset__c</code> and <code>Vintage__c</code>, so let's reimport it with those two columns forced to an interger datatype:</p>
 
 </div>
 </div>
@@ -15217,7 +15217,7 @@ memory usage: 529.8+ KB
 <p><code>exist_inventory['Model__c']</code> = <code>new_list['MODEL']</code></p>
 <p><code>exist_inventory['Description__c']</code> = <code>new_list['EQUIPMENT']</code></p>
 <p><code>exist_inventory['Make__c']</code> = <code>new_list['MANUFACTURER']</code></p>
-<p>'Seller_Asset__c' and 'TOOL CODE' seem like a good starting point for matching and identifying errant data. Let's set them as our indexes.</p>
+<p><code>Seller_Asset__c</code> and <code>TOOL CODE</code> seem like a good starting point for matching and identifying errant data. Let's set them as our indexes.</p>
 
 </div>
 </div>
@@ -15622,7 +15622,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can use new_list['MODEL'] metadata to see if these exist in the new list; if they do, we can update the 'TOOL CODE' data in the existing inventory.</p>
+<p>We can use <code>new_list['MODEL']</code> metadata to see if these exist in the new list; if they do, we can update the <code>TOOL CODE</code> data in the existing inventory.</p>
 
 </div>
 </div>
@@ -17943,19 +17943,6 @@ memory usage: 529.8+ KB
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
     </div>
   </div>
