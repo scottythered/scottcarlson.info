@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Untitled</title>
+<title>Scott Carlson Sample Project</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -14032,7 +14032,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's first look at the new inventory list, <strong>HC_InventoryList.xlsx</strong>:</p>
+<p>Let's first look at the new inventory list, <strong>HC_InventoryList.xlsx</strong>, which has an issue:</p>
 
 </div>
 </div>
@@ -14043,7 +14043,7 @@ memory usage: 529.8+ KB
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;HC_InventoryList.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Table 1&#39;</span><span class="p">)</span>
-<span class="n">new_list</span>
+<span class="n">new_list</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14091,678 +14091,6 @@ memory usage: 529.8+ KB
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>0</th>
-      <td>7519</td>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>300</td>
-      <td>2004</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>7520</td>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>NaN</td>
-      <td>UF3000</td>
-      <td>300</td>
-      <td>2004</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>7521</td>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>NaN</td>
-      <td>UF3000</td>
-      <td>300</td>
-      <td>2004</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>8409</td>
-      <td>TEST</td>
-      <td>TESTER_PARAMETRIC TEST</td>
-      <td>AGILENT</td>
-      <td>NaN</td>
-      <td>4142B</td>
-      <td>150</td>
-      <td>2000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>8273</td>
-      <td>PVD</td>
-      <td>SPUTTERING SYSTEM</td>
-      <td>ANELVA</td>
-      <td>NaN</td>
-      <td>ILC-1080</td>
-      <td>200</td>
-      <td>2003</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>7428</td>
-      <td>OTHERS</td>
-      <td>VACUUM LEAK DETECTOR</td>
-      <td>ANELVA</td>
-      <td>NaN</td>
-      <td>M-222LD-D</td>
-      <td>NaN</td>
-      <td>2011</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>7201</td>
-      <td>ETCH</td>
-      <td>POLY ETCHER</td>
-      <td>APPLIED MATERIALS</td>
-      <td>NaN</td>
-      <td>Centura DPS</td>
-      <td>200</td>
-      <td>1998</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>7320</td>
-      <td>CVD</td>
-      <td>PLASMA CVD</td>
-      <td>APPLIED MATERIALS</td>
-      <td>NaN</td>
-      <td>Centura DXZ</td>
-      <td>150</td>
-      <td>1999</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>7267</td>
-      <td>CVD</td>
-      <td>HDP-CVD</td>
-      <td>APPLIED MATERIALS</td>
-      <td>NaN</td>
-      <td>Centura HDP</td>
-      <td>200</td>
-      <td>1995</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>7204</td>
-      <td>ETCH</td>
-      <td>OXIDE ETCHER</td>
-      <td>APPLIED MATERIALS</td>
-      <td>NaN</td>
-      <td>Centura MXP</td>
-      <td>200</td>
-      <td>1997</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>8410</td>
-      <td>PVD</td>
-      <td>SPUTTERING SYSTEM</td>
-      <td>APPLIED MATERIALS</td>
-      <td>NaN</td>
-      <td>Endura 5500</td>
-      <td>150</td>
-      <td>1992</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>6954</td>
-      <td>PVD</td>
-      <td>SPUTTERING SYSTEM</td>
-      <td>APPLIED MATERIALS</td>
-      <td>NaN</td>
-      <td>Endura 5500</td>
-      <td>150</td>
-      <td>1995</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>7570</td>
-      <td>PVD</td>
-      <td>SPUTTERING SYSTEM</td>
-      <td>APPLIED MATERIALS</td>
-      <td>NaN</td>
-      <td>Endura 5500</td>
-      <td>150</td>
-      <td>1995</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>8411</td>
-      <td>CVD</td>
-      <td>PLASMA CVD</td>
-      <td>APPLIED MATERIALS</td>
-      <td>NaN</td>
-      <td>P-5000</td>
-      <td>150</td>
-      <td>1990</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>7424</td>
-      <td>CVD</td>
-      <td>PLASMA CVD</td>
-      <td>ASM</td>
-      <td>NaN</td>
-      <td>Eagle10</td>
-      <td>200</td>
-      <td>1998</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>7104</td>
-      <td>CVD</td>
-      <td>PLASMA CVD</td>
-      <td>ASM</td>
-      <td>NaN</td>
-      <td>Eagle10 TRIDENT</td>
-      <td>150</td>
-      <td>2007</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>7617</td>
-      <td>CVD</td>
-      <td>AP-CVD</td>
-      <td>AVIZA</td>
-      <td>NaN</td>
-      <td>WJ-1000H</td>
-      <td>200</td>
-      <td>1996</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>7166</td>
-      <td>PHOTOLITHO</td>
-      <td>MASK ALIGNER</td>
-      <td>CANON</td>
-      <td>NaN</td>
-      <td>MPA-600FA</td>
-      <td>125</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>7294</td>
-      <td>PHOTOLITHO</td>
-      <td>MASK ALIGNER</td>
-      <td>CANON</td>
-      <td>NaN</td>
-      <td>MPA-600FA</td>
-      <td>125</td>
-      <td>1985</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>7295</td>
-      <td>PHOTOLITHO</td>
-      <td>MASK ALIGNER</td>
-      <td>CANON</td>
-      <td>NaN</td>
-      <td>MPA-600FA</td>
-      <td>125</td>
-      <td>1985</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>7396</td>
-      <td>PHOTOLITHO</td>
-      <td>MASK ALIGNER</td>
-      <td>CANON</td>
-      <td>NaN</td>
-      <td>MPA-600FA</td>
-      <td>125</td>
-      <td>1986</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>6944</td>
-      <td>PHOTOLITHO</td>
-      <td>MASK ALIGNER</td>
-      <td>CANON</td>
-      <td>NaN</td>
-      <td>MPA-600FA</td>
-      <td>125</td>
-      <td>1985</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>7158</td>
-      <td>PHOTOLITHO</td>
-      <td>MASK ALIGNER</td>
-      <td>CANON</td>
-      <td>NaN</td>
-      <td>MPA-600FA</td>
-      <td>125</td>
-      <td>1986</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>8413</td>
-      <td>PHOTOLITHO</td>
-      <td>MASK ALIGNER</td>
-      <td>CANON</td>
-      <td>NaN</td>
-      <td>MPA-600FA</td>
-      <td>150</td>
-      <td>1985</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>8414</td>
-      <td>PHOTOLITHO</td>
-      <td>MASK ALIGNER</td>
-      <td>CANON</td>
-      <td>NaN</td>
-      <td>MPA-600FA</td>
-      <td>150</td>
-      <td>1985</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>6993</td>
-      <td>PHOTOLITHO</td>
-      <td>MASK ALIGNER</td>
-      <td>CANON</td>
-      <td>NaN</td>
-      <td>PLA-501FA</td>
-      <td>50</td>
-      <td>1988</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>7641</td>
-      <td>DICING</td>
-      <td>DICER AUTO</td>
-      <td>DISCO</td>
-      <td>NaN</td>
-      <td>DAD3350</td>
-      <td>200</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>7642</td>
-      <td>DICING</td>
-      <td>AUTOMATIC CLEANING SYSTEM</td>
-      <td>DISCO</td>
-      <td>NaN</td>
-      <td>DCS141</td>
-      <td>200</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>7618</td>
-      <td>BACK GRIND</td>
-      <td>BACK GRINDER_FULL AUTO</td>
-      <td>DISCO</td>
-      <td>NaN</td>
-      <td>DFG-841</td>
-      <td>200</td>
-      <td>1999</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>7263</td>
-      <td>WET</td>
-      <td>POST CMP CLEANING SYSTEM</td>
-      <td>DNS</td>
-      <td>NaN</td>
-      <td>AS2000</td>
-      <td>200</td>
-      <td>1998</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>93</th>
-      <td>8429</td>
-      <td>PHOTOLITHO</td>
-      <td>DEVELOPER</td>
-      <td>TEL</td>
-      <td>NaN</td>
-      <td>MARK-V</td>
-      <td>150</td>
-      <td>1994</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>94</th>
-      <td>7431</td>
-      <td>PHOTOLITHO</td>
-      <td>COATER&amp;DEVELOPER</td>
-      <td>TEL</td>
-      <td>NaN</td>
-      <td>MARK-Vz</td>
-      <td>150</td>
-      <td>1998</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>8440</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>NaN</td>
-      <td>TE5000ATC</td>
-      <td>150</td>
-      <td>1992</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>96</th>
-      <td>6792</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>TE5000ATC</td>
-      <td>NaN</td>
-      <td>150</td>
-      <td>1996</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>97</th>
-      <td>7398</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>TE8500(S)ATC</td>
-      <td>NaN</td>
-      <td>150</td>
-      <td>1992</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>98</th>
-      <td>8441</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>TE8500(S)ATC</td>
-      <td>NaN</td>
-      <td>150</td>
-      <td>1993</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>8248</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>TE8500(S)ATC</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>1995</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>100</th>
-      <td>7252</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>TE8500ATC</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>1995</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>101</th>
-      <td>7339</td>
-      <td>ETCH</td>
-      <td>OXIDE ETCHER</td>
-      <td>TEL</td>
-      <td>UnityII-855II</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>1996</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>102</th>
-      <td>7248</td>
-      <td>ETCH</td>
-      <td>OXIDE ETCHER</td>
-      <td>TEL</td>
-      <td>UnityII-855II</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>1996</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>103</th>
-      <td>8306</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>UnityIIe-655II</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>2002</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>104</th>
-      <td>8302</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>UnityIIe-855II</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>1997</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>105</th>
-      <td>8305</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>UnityIIe-855II</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>2001</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>106</th>
-      <td>8341</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>UnityIIe-855II</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>2002</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>107</th>
-      <td>8304</td>
-      <td>ETCH</td>
-      <td>OXIDE-ETCHER</td>
-      <td>TEL</td>
-      <td>UnityIIe-855SS</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>2000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>108</th>
-      <td>8061</td>
-      <td>ETCH</td>
-      <td>ASHER</td>
-      <td>TOK</td>
-      <td>TCA-3822</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>1995</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>109</th>
-      <td>7408</td>
-      <td>ETCH</td>
-      <td>ASHER</td>
-      <td>TOK</td>
-      <td>TCA-3822</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>1995</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>110</th>
-      <td>8352</td>
-      <td>ETCH</td>
-      <td>ASHER</td>
-      <td>TOK</td>
-      <td>TCE-3822</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>111</th>
-      <td>8351</td>
-      <td>ETCH</td>
-      <td>ASHER</td>
-      <td>TOK</td>
-      <td>TCE-3822</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>112</th>
-      <td>7495</td>
-      <td>INSPECTION</td>
-      <td>AUTOMATIC VISUAL INSPECTION</td>
-      <td>TOPCON</td>
-      <td>Vi-4202</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>2004</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>113</th>
-      <td>6875</td>
-      <td>METROLOGY</td>
-      <td>WAFER PARTICLE COUNTER</td>
-      <td>TOPCON</td>
-      <td>WM-5000</td>
-      <td>NaN</td>
-      <td>300</td>
-      <td>2005</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>114</th>
-      <td>7475</td>
-      <td>PVD</td>
-      <td>EVAPORATOR_E GUN</td>
-      <td>ULVAC</td>
-      <td>ei-7L</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>115</th>
-      <td>7144</td>
-      <td>INSPECTION</td>
-      <td>X-ray 3D-CT SYSREM</td>
-      <td>Uni-Hite System</td>
-      <td>XVA-160</td>
-      <td>NaN</td>
-      <td>-</td>
-      <td>2006</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>116</th>
-      <td>7619</td>
-      <td>PHOTOLITHO</td>
-      <td>WAFER EDGE EXPOSURE</td>
-      <td>USHIO</td>
-      <td>PE-250R2</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>117</th>
-      <td>7620</td>
-      <td>PHOTOLITHO</td>
-      <td>WAFER EDGE EXPOSURE</td>
-      <td>USHIO</td>
-      <td>PE-250T2</td>
-      <td>NaN</td>
-      <td>200</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
     <tr>
       <th>118</th>
       <td>7581</td>
@@ -14825,7 +14153,6 @@ memory usage: 529.8+ KB
     </tr>
   </tbody>
 </table>
-<p>123 rows × 9 columns</p>
 </div>
 </div>
 
@@ -14838,7 +14165,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The last two rows contain extraneous, business-related information:</p>
+<p>What's the problem? The last two rows contain extraneous, business-related information:</p>
 
 </div>
 </div>
@@ -15064,136 +14391,6 @@ memory usage: 529.8+ KB
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="n">new_list</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;TOOL CODE&#39;</span><span class="p">)</span>
-<span class="n">new_list</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>PROCESS</th>
-      <th>EQUIPMENT</th>
-      <th>MANUFACTURER</th>
-      <th>Unnamed: 4</th>
-      <th>MODEL</th>
-      <th>WAFER SIZE</th>
-      <th>VINTAGE</th>
-      <th>Unnamed: 8</th>
-    </tr>
-    <tr>
-      <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7519</th>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>300</td>
-      <td>2004</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7520</th>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>NaN</td>
-      <td>UF3000</td>
-      <td>300</td>
-      <td>2004</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7521</th>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>NaN</td>
-      <td>UF3000</td>
-      <td>300</td>
-      <td>2004</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8409</th>
-      <td>TEST</td>
-      <td>TESTER_PARAMETRIC TEST</td>
-      <td>AGILENT</td>
-      <td>NaN</td>
-      <td>4142B</td>
-      <td>150</td>
-      <td>2000</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8273</th>
-      <td>PVD</td>
-      <td>SPUTTERING SYSTEM</td>
-      <td>ANELVA</td>
-      <td>NaN</td>
-      <td>ILC-1080</td>
-      <td>200</td>
-      <td>2003</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15205,7 +14402,7 @@ memory usage: 529.8+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span><span class="p">[</span><span class="s1">&#39;Unnamed: 8&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -15221,7 +14418,7 @@ memory usage: 529.8+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
@@ -15246,11 +14443,137 @@ memory usage: 529.8+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="n">new_list</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 8&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">new_list</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TOOL CODE</th>
+      <th>PROCESS</th>
+      <th>EQUIPMENT</th>
+      <th>MANUFACTURER</th>
+      <th>Unnamed: 4</th>
+      <th>MODEL</th>
+      <th>WAFER SIZE</th>
+      <th>VINTAGE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7519</td>
+      <td>TEST</td>
+      <td>WAFER PROBER_FULL AUTO</td>
+      <td>ACCRETECH</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>300</td>
+      <td>2004</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7520</td>
+      <td>TEST</td>
+      <td>WAFER PROBER_FULL AUTO</td>
+      <td>ACCRETECH</td>
+      <td>NaN</td>
+      <td>UF3000</td>
+      <td>300</td>
+      <td>2004</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7521</td>
+      <td>TEST</td>
+      <td>WAFER PROBER_FULL AUTO</td>
+      <td>ACCRETECH</td>
+      <td>NaN</td>
+      <td>UF3000</td>
+      <td>300</td>
+      <td>2004</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8409</td>
+      <td>TEST</td>
+      <td>TESTER_PARAMETRIC TEST</td>
+      <td>AGILENT</td>
+      <td>NaN</td>
+      <td>4142B</td>
+      <td>150</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8273</td>
+      <td>PVD</td>
+      <td>SPUTTERING SYSTEM</td>
+      <td>ANELVA</td>
+      <td>NaN</td>
+      <td>ILC-1080</td>
+      <td>200</td>
+      <td>2003</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>'Unnamed: 4', however is not empty. Near the tail of the table, values from the 'MODEL' are missing and found in 4:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -15286,6 +14609,7 @@ memory usage: 529.8+ KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>TOOL CODE</th>
       <th>PROCESS</th>
       <th>EQUIPMENT</th>
       <th>MANUFACTURER</th>
@@ -15294,67 +14618,62 @@ memory usage: 529.8+ KB
       <th>WAFER SIZE</th>
       <th>VINTAGE</th>
     </tr>
-    <tr>
-      <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
   </thead>
   <tbody>
     <tr>
-      <th>7519</th>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
+      <th>116</th>
+      <td>7619</td>
+      <td>PHOTOLITHO</td>
+      <td>WAFER EDGE EXPOSURE</td>
+      <td>USHIO</td>
+      <td>PE-250R2</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>300</td>
-      <td>2004</td>
-    </tr>
-    <tr>
-      <th>7520</th>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>NaN</td>
-      <td>UF3000</td>
-      <td>300</td>
-      <td>2004</td>
-    </tr>
-    <tr>
-      <th>7521</th>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>NaN</td>
-      <td>UF3000</td>
-      <td>300</td>
-      <td>2004</td>
-    </tr>
-    <tr>
-      <th>8409</th>
-      <td>TEST</td>
-      <td>TESTER_PARAMETRIC TEST</td>
-      <td>AGILENT</td>
-      <td>NaN</td>
-      <td>4142B</td>
-      <td>150</td>
-      <td>2000</td>
-    </tr>
-    <tr>
-      <th>8273</th>
-      <td>PVD</td>
-      <td>SPUTTERING SYSTEM</td>
-      <td>ANELVA</td>
-      <td>NaN</td>
-      <td>ILC-1080</td>
       <td>200</td>
-      <td>2003</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>7620</td>
+      <td>PHOTOLITHO</td>
+      <td>WAFER EDGE EXPOSURE</td>
+      <td>USHIO</td>
+      <td>PE-250T2</td>
+      <td>NaN</td>
+      <td>200</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>7581</td>
+      <td>PHOTOLITHO</td>
+      <td>UV CURING SYSTEM</td>
+      <td>USHIO</td>
+      <td>UMA-1002-HC933HD</td>
+      <td>NaN</td>
+      <td>200</td>
+      <td>1998</td>
+    </tr>
+    <tr>
+      <th>119</th>
+      <td>8444</td>
+      <td>ION IMPLANT</td>
+      <td>IMPLANTER_MEDIUM CURRENT</td>
+      <td>VARIAN</td>
+      <td>E-220</td>
+      <td>NaN</td>
+      <td>150</td>
+      <td>1991</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>7373</td>
+      <td>TEST</td>
+      <td>TESTER</td>
+      <td>VERIGY</td>
+      <td>93000</td>
+      <td>NaN</td>
+      <td>300</td>
+      <td>2007</td>
     </tr>
   </tbody>
 </table>
@@ -15370,7 +14689,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>'Unnamed: 4', however is not empty. Near the tail of the table, values from the 'MODEL' are missing and found in 4:</p>
+<p>We can fill the null values from 'MODEL' witht hose from 'Unnamed: 4':</p>
 
 </div>
 </div>
@@ -15380,7 +14699,8 @@ memory usage: 529.8+ KB
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span><span class="p">[</span><span class="s1">&#39;MODEL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_list</span><span class="p">[</span><span class="s1">&#39;MODEL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">new_list</span><span class="p">[</span><span class="s1">&#39;Unnamed: 4&#39;</span><span class="p">])</span>
+<span class="n">new_list</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -15416,6 +14736,7 @@ memory usage: 529.8+ KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>TOOL CODE</th>
       <th>PROCESS</th>
       <th>EQUIPMENT</th>
       <th>MANUFACTURER</th>
@@ -15424,65 +14745,60 @@ memory usage: 529.8+ KB
       <th>WAFER SIZE</th>
       <th>VINTAGE</th>
     </tr>
-    <tr>
-      <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
   </thead>
   <tbody>
     <tr>
-      <th>7619</th>
+      <th>116</th>
+      <td>7619</td>
       <td>PHOTOLITHO</td>
       <td>WAFER EDGE EXPOSURE</td>
       <td>USHIO</td>
       <td>PE-250R2</td>
-      <td>NaN</td>
+      <td>PE-250R2</td>
       <td>200</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>7620</th>
+      <th>117</th>
+      <td>7620</td>
       <td>PHOTOLITHO</td>
       <td>WAFER EDGE EXPOSURE</td>
       <td>USHIO</td>
       <td>PE-250T2</td>
-      <td>NaN</td>
+      <td>PE-250T2</td>
       <td>200</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>7581</th>
+      <th>118</th>
+      <td>7581</td>
       <td>PHOTOLITHO</td>
       <td>UV CURING SYSTEM</td>
       <td>USHIO</td>
       <td>UMA-1002-HC933HD</td>
-      <td>NaN</td>
+      <td>UMA-1002-HC933HD</td>
       <td>200</td>
       <td>1998</td>
     </tr>
     <tr>
-      <th>8444</th>
+      <th>119</th>
+      <td>8444</td>
       <td>ION IMPLANT</td>
       <td>IMPLANTER_MEDIUM CURRENT</td>
       <td>VARIAN</td>
       <td>E-220</td>
-      <td>NaN</td>
+      <td>E-220</td>
       <td>150</td>
       <td>1991</td>
     </tr>
     <tr>
-      <th>7373</th>
+      <th>120</th>
+      <td>7373</td>
       <td>TEST</td>
       <td>TESTER</td>
       <td>VERIGY</td>
       <td>93000</td>
-      <td>NaN</td>
+      <td>93000</td>
       <td>300</td>
       <td>2007</td>
     </tr>
@@ -15500,7 +14816,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can fill the null values from 'MODEL' witht hose from 'Unnamed: 4':</p>
+<p>And now drop 'Unnamed: 4':</p>
 
 </div>
 </div>
@@ -15510,8 +14826,8 @@ memory usage: 529.8+ KB
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span><span class="p">[</span><span class="s1">&#39;MODEL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_list</span><span class="p">[</span><span class="s1">&#39;MODEL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">new_list</span><span class="p">[</span><span class="s1">&#39;Unnamed: 4&#39;</span><span class="p">])</span>
-<span class="n">new_list</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="n">new_list</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 4&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">new_list</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -15547,137 +14863,7 @@ memory usage: 529.8+ KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PROCESS</th>
-      <th>EQUIPMENT</th>
-      <th>MANUFACTURER</th>
-      <th>Unnamed: 4</th>
-      <th>MODEL</th>
-      <th>WAFER SIZE</th>
-      <th>VINTAGE</th>
-    </tr>
-    <tr>
       <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7619</th>
-      <td>PHOTOLITHO</td>
-      <td>WAFER EDGE EXPOSURE</td>
-      <td>USHIO</td>
-      <td>PE-250R2</td>
-      <td>PE-250R2</td>
-      <td>200</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7620</th>
-      <td>PHOTOLITHO</td>
-      <td>WAFER EDGE EXPOSURE</td>
-      <td>USHIO</td>
-      <td>PE-250T2</td>
-      <td>PE-250T2</td>
-      <td>200</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7581</th>
-      <td>PHOTOLITHO</td>
-      <td>UV CURING SYSTEM</td>
-      <td>USHIO</td>
-      <td>UMA-1002-HC933HD</td>
-      <td>UMA-1002-HC933HD</td>
-      <td>200</td>
-      <td>1998</td>
-    </tr>
-    <tr>
-      <th>8444</th>
-      <td>ION IMPLANT</td>
-      <td>IMPLANTER_MEDIUM CURRENT</td>
-      <td>VARIAN</td>
-      <td>E-220</td>
-      <td>E-220</td>
-      <td>150</td>
-      <td>1991</td>
-    </tr>
-    <tr>
-      <th>7373</th>
-      <td>TEST</td>
-      <td>TESTER</td>
-      <td>VERIGY</td>
-      <td>93000</td>
-      <td>93000</td>
-      <td>300</td>
-      <td>2007</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>And now drop 'Unnamed: 4':</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="n">new_list</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Unnamed: 4&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">new_list</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
       <th>PROCESS</th>
       <th>EQUIPMENT</th>
       <th>MANUFACTURER</th>
@@ -15685,19 +14871,11 @@ memory usage: 529.8+ KB
       <th>WAFER SIZE</th>
       <th>VINTAGE</th>
     </tr>
-    <tr>
-      <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
   </thead>
   <tbody>
     <tr>
-      <th>7519</th>
+      <th>0</th>
+      <td>7519</td>
       <td>TEST</td>
       <td>WAFER PROBER_FULL AUTO</td>
       <td>ACCRETECH</td>
@@ -15706,7 +14884,8 @@ memory usage: 529.8+ KB
       <td>2004</td>
     </tr>
     <tr>
-      <th>7520</th>
+      <th>1</th>
+      <td>7520</td>
       <td>TEST</td>
       <td>WAFER PROBER_FULL AUTO</td>
       <td>ACCRETECH</td>
@@ -15715,7 +14894,8 @@ memory usage: 529.8+ KB
       <td>2004</td>
     </tr>
     <tr>
-      <th>7521</th>
+      <th>2</th>
+      <td>7521</td>
       <td>TEST</td>
       <td>WAFER PROBER_FULL AUTO</td>
       <td>ACCRETECH</td>
@@ -15724,7 +14904,8 @@ memory usage: 529.8+ KB
       <td>2004</td>
     </tr>
     <tr>
-      <th>8409</th>
+      <th>3</th>
+      <td>8409</td>
       <td>TEST</td>
       <td>TESTER_PARAMETRIC TEST</td>
       <td>AGILENT</td>
@@ -15733,7 +14914,8 @@ memory usage: 529.8+ KB
       <td>2000</td>
     </tr>
     <tr>
-      <th>8273</th>
+      <th>4</th>
+      <td>8273</td>
       <td>PVD</td>
       <td>SPUTTERING SYSTEM</td>
       <td>ANELVA</td>
@@ -15769,7 +14951,7 @@ memory usage: 529.8+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Hitachi Capital Export.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">)</span>
@@ -15786,7 +14968,7 @@ memory usage: 529.8+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -15902,7 +15084,7 @@ memory usage: 529.8+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Hitachi Capital Export.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Seller_Asset__c&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="s1">&#39;Vintage__c&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">})</span>
@@ -15919,7 +15101,7 @@ memory usage: 529.8+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -16035,24 +15217,134 @@ memory usage: 529.8+ KB
 <p><code>exist_inventory['Model__c']</code> = <code>new_list['MODEL']</code></p>
 <p><code>exist_inventory['Description__c']</code> = <code>new_list['EQUIPMENT']</code></p>
 <p><code>exist_inventory['Make__c']</code> = <code>new_list['MANUFACTURER']</code></p>
-<p>'Seller_Asset__c' and 'TOOL CODE' seem like a good starting point for matching and identifying errant data. Let's make sure neither has null values.</p>
+<p>'Seller_Asset__c' and 'TOOL CODE' seem like a good starting point for matching and identifying errant data. Let's set them as our indexes.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Checking-for-Null-Values-in-our-Match-Point">Checking for Null Values in our Match Point<a class="anchor-link" href="#Checking-for-Null-Values-in-our-Match-Point">&#182;</a></h2>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span> <span class="o">=</span> <span class="n">new_list</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;TOOL CODE&#39;</span><span class="p">)</span>
+<span class="n">new_list</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PROCESS</th>
+      <th>EQUIPMENT</th>
+      <th>MANUFACTURER</th>
+      <th>MODEL</th>
+      <th>WAFER SIZE</th>
+      <th>VINTAGE</th>
+    </tr>
+    <tr>
+      <th>TOOL CODE</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7519</th>
+      <td>TEST</td>
+      <td>WAFER PROBER_FULL AUTO</td>
+      <td>ACCRETECH</td>
+      <td>NaN</td>
+      <td>300</td>
+      <td>2004</td>
+    </tr>
+    <tr>
+      <th>7520</th>
+      <td>TEST</td>
+      <td>WAFER PROBER_FULL AUTO</td>
+      <td>ACCRETECH</td>
+      <td>UF3000</td>
+      <td>300</td>
+      <td>2004</td>
+    </tr>
+    <tr>
+      <th>7521</th>
+      <td>TEST</td>
+      <td>WAFER PROBER_FULL AUTO</td>
+      <td>ACCRETECH</td>
+      <td>UF3000</td>
+      <td>300</td>
+      <td>2004</td>
+    </tr>
+    <tr>
+      <th>8409</th>
+      <td>TEST</td>
+      <td>TESTER_PARAMETRIC TEST</td>
+      <td>AGILENT</td>
+      <td>4142B</td>
+      <td>150</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>8273</th>
+      <td>PVD</td>
+      <td>SPUTTERING SYSTEM</td>
+      <td>ANELVA</td>
+      <td>ILC-1080</td>
+      <td>200</td>
+      <td>2003</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory</span> <span class="o">=</span> <span class="n">exist_inventory</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Seller_Asset__c&#39;</span><span class="p">)</span>
+<span class="n">exist_inventory</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -16069,9 +15361,105 @@ memory usage: 529.8+ KB
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<div class="output_text output_subarea output_execute_result">
-<pre>0</pre>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Id</th>
+      <th>Postgres_Id__c</th>
+      <th>Make__c</th>
+      <th>Model__c</th>
+      <th>Description__c</th>
+      <th>Vintage__c</th>
+      <th>Wafer_Size__c</th>
+      <th>Account__r:Name</th>
+    </tr>
+    <tr>
+      <th>Seller_Asset__c</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7428.0</th>
+      <td>a0w0V00000MefhmQAB</td>
+      <td>170194</td>
+      <td>ANELVA</td>
+      <td>M-222LD-D</td>
+      <td>VACUUM LEAK DETECTOR</td>
+      <td>2011</td>
+      <td>NaN</td>
+      <td>Hitachi Capital Corporation</td>
+    </tr>
+    <tr>
+      <th>7256.0</th>
+      <td>a0w0V00000MefhpQAB</td>
+      <td>170197</td>
+      <td>HITACHI</td>
+      <td>S-3000N</td>
+      <td>REVIEW SEM</td>
+      <td>2003</td>
+      <td>NaN</td>
+      <td>Hitachi Capital Corporation</td>
+    </tr>
+    <tr>
+      <th>7563.0</th>
+      <td>a0w0V00000MefhtQAB</td>
+      <td>170201</td>
+      <td>KEYENCE</td>
+      <td>ML-Z9500/9510</td>
+      <td>LASER MARKER</td>
+      <td>2008</td>
+      <td>NaN</td>
+      <td>Hitachi Capital Corporation</td>
+    </tr>
+    <tr>
+      <th>7146.0</th>
+      <td>a0w0V00000MefhvQAB</td>
+      <td>170203</td>
+      <td>SHOWA SHINKU</td>
+      <td>SBC-10C</td>
+      <td>EVAPORATOR</td>
+      <td>1993</td>
+      <td>NaN</td>
+      <td>Hitachi Capital Corporation</td>
+    </tr>
+    <tr>
+      <th>7144.0</th>
+      <td>a0w0V00000MefhwQAB</td>
+      <td>170204</td>
+      <td>Uni-Hite System</td>
+      <td>XVA-160</td>
+      <td>X-ray 3D-CT System</td>
+      <td>2006</td>
+      <td>NaN</td>
+      <td>Hitachi Capital Corporation</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -16079,13 +15467,21 @@ memory usage: 529.8+ KB
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's weird... Why is our index changed to scientific form? Could there be null values?</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory</span><span class="p">[</span><span class="s1">&#39;Seller_Asset__c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -16116,7 +15512,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Well, that needs to be fixed. let's take a look at those null values:</p>
+<p>Ah. Well, that needs to be fixed. Let's reset the dataframe and take a look at those null values:</p>
 
 </div>
 </div>
@@ -16126,7 +15522,8 @@ memory usage: 529.8+ KB
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">null_check</span> <span class="o">=</span> <span class="n">exist_inventory</span><span class="p">[</span><span class="n">exist_inventory</span><span class="p">[</span><span class="s1">&#39;Seller_Asset__c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Hitachi Capital Export.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sheet1&#39;</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Seller_Asset__c&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span><span class="s1">&#39;Vintage__c&#39;</span><span class="p">:</span><span class="nb">int</span><span class="p">})</span>
+<span class="n">null_check</span> <span class="o">=</span> <span class="n">exist_inventory</span><span class="p">[</span><span class="n">exist_inventory</span><span class="p">[</span><span class="s1">&#39;Seller_Asset__c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
 <span class="n">null_check</span>
 </pre></div>
 
@@ -16313,7 +15710,8 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Only one of the three exists in the new list. Let's update that tool code in the existing inventory:</p>
+<p>Only one of the three exists in the new list.</p>
+<p>Let's update that lone tool code in the existing inventory:</p>
 
 </div>
 </div>
@@ -16510,8 +15908,7 @@ memory usage: 529.8+ KB
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># exist_inventory = exist_inventory[(exist_inventory[&#39;Id&#39;] != &#39;a0w0V00000MefjPQAR&#39;) &amp; (exist_inventory[&#39;Id&#39;] != &#39;a0w0V00000MefjQQAR&#39;)]</span>
-<span class="n">exist_inventory</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">exist_inventory</span><span class="o">.</span><span class="n">index</span><span class="p">[[</span><span class="mi">70</span><span class="p">,</span><span class="mi">71</span><span class="p">]],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">exist_inventory</span><span class="o">.</span><span class="n">index</span><span class="p">[[</span><span class="mi">70</span><span class="p">,</span><span class="mi">71</span><span class="p">]],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">another_check</span> <span class="o">=</span> <span class="n">exist_inventory</span><span class="p">[</span><span class="n">exist_inventory</span><span class="p">[</span><span class="s1">&#39;Seller_Asset__c&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
 <span class="n">another_check</span>
 </pre></div>
@@ -16604,6 +16001,14 @@ memory usage: 529.8+ KB
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>NOW we can set the index.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -16777,7 +16182,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="New-Additions">New Additions<a class="anchor-link" href="#New-Additions">&#182;</a></h2><p>Now we can look for items in the new list which do not exist in the inventory, meaning they will need to be <strong>added</strong> to the current inventory:</p>
+<h2 id="Items-to-be-Added">Items to be Added<a class="anchor-link" href="#Items-to-be-Added">&#182;</a></h2><p>Now we can look for items in the new list which do not exist in the inventory, meaning they will need to be <strong>added</strong> to the current inventory:</p>
 
 </div>
 </div>
@@ -16983,7 +16388,7 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="More-Archives">More Archives<a class="anchor-link" href="#More-Archives">&#182;</a></h2><p>We can do a further check for data to archive by seeing what's in the current inventory but NOT in the (updated) new inventory:</p>
+<h2 id="More-Items-to-be-Archived">More Items to be Archived<a class="anchor-link" href="#More-Items-to-be-Archived">&#182;</a></h2><p>We can do a further check for data to archive by seeing what's in the current inventory but NOT in the (updated) new inventory:</p>
 
 </div>
 </div>
@@ -17308,128 +16713,14 @@ memory usage: 529.8+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Comparing-Datasets">Comparing Datasets<a class="anchor-link" href="#Comparing-Datasets">&#182;</a></h2>
+<h2 id="Comparing-Datasets-to-Find-Changes">Comparing Datasets to Find Changes<a class="anchor-link" href="#Comparing-Datasets-to-Find-Changes">&#182;</a></h2><p>As shown in the mapping above, our two datasets contain 6 shared datapoints. To see what might need to be updated in the existing data, we create two new dataframes that match each other, structurally.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[42]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>PROCESS</th>
-      <th>EQUIPMENT</th>
-      <th>MANUFACTURER</th>
-      <th>MODEL</th>
-      <th>WAFER SIZE</th>
-      <th>VINTAGE</th>
-    </tr>
-    <tr>
-      <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7519</th>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>NaN</td>
-      <td>300</td>
-      <td>2004</td>
-    </tr>
-    <tr>
-      <th>7520</th>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>UF3000</td>
-      <td>300</td>
-      <td>2004</td>
-    </tr>
-    <tr>
-      <th>7521</th>
-      <td>TEST</td>
-      <td>WAFER PROBER_FULL AUTO</td>
-      <td>ACCRETECH</td>
-      <td>UF3000</td>
-      <td>300</td>
-      <td>2004</td>
-    </tr>
-    <tr>
-      <th>8409</th>
-      <td>TEST</td>
-      <td>TESTER_PARAMETRIC TEST</td>
-      <td>AGILENT</td>
-      <td>4142B</td>
-      <td>150</td>
-      <td>2000</td>
-    </tr>
-    <tr>
-      <th>8273</th>
-      <td>PVD</td>
-      <td>SPUTTERING SYSTEM</td>
-      <td>ANELVA</td>
-      <td>ILC-1080</td>
-      <td>200</td>
-      <td>2003</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list_comparison_version</span> <span class="o">=</span> <span class="n">new_list</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;PROCESS&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -17447,7 +16738,7 @@ memory usage: 529.8+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[43]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -17539,269 +16830,11 @@ memory usage: 529.8+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[44]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Id</th>
-      <th>Postgres_Id__c</th>
-      <th>Make__c</th>
-      <th>Model__c</th>
-      <th>Description__c</th>
-      <th>Vintage__c</th>
-      <th>Wafer_Size__c</th>
-      <th>Account__r:Name</th>
-    </tr>
-    <tr>
-      <th>Seller_Asset__c</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7428</th>
-      <td>a0w0V00000MefhmQAB</td>
-      <td>170194</td>
-      <td>ANELVA</td>
-      <td>M-222LD-D</td>
-      <td>VACUUM LEAK DETECTOR</td>
-      <td>2011</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-    <tr>
-      <th>7256</th>
-      <td>a0w0V00000MefhpQAB</td>
-      <td>170197</td>
-      <td>HITACHI</td>
-      <td>S-3000N</td>
-      <td>REVIEW SEM</td>
-      <td>2003</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-    <tr>
-      <th>7563</th>
-      <td>a0w0V00000MefhtQAB</td>
-      <td>170201</td>
-      <td>KEYENCE</td>
-      <td>ML-Z9500/9510</td>
-      <td>LASER MARKER</td>
-      <td>2008</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-    <tr>
-      <th>7146</th>
-      <td>a0w0V00000MefhvQAB</td>
-      <td>170203</td>
-      <td>SHOWA SHINKU</td>
-      <td>SBC-10C</td>
-      <td>EVAPORATOR</td>
-      <td>1993</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-    <tr>
-      <th>7144</th>
-      <td>a0w0V00000MefhwQAB</td>
-      <td>170204</td>
-      <td>Uni-Hite System</td>
-      <td>XVA-160</td>
-      <td>X-ray 3D-CT System</td>
-      <td>2006</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory</span> <span class="o">=</span> <span class="n">exist_inventory</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="s1">&#39;TOOL CODE&#39;</span><span class="p">)</span>
-<span class="n">exist_inventory</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[45]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Id</th>
-      <th>Postgres_Id__c</th>
-      <th>Make__c</th>
-      <th>Model__c</th>
-      <th>Description__c</th>
-      <th>Vintage__c</th>
-      <th>Wafer_Size__c</th>
-      <th>Account__r:Name</th>
-    </tr>
-    <tr>
-      <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7428</th>
-      <td>a0w0V00000MefhmQAB</td>
-      <td>170194</td>
-      <td>ANELVA</td>
-      <td>M-222LD-D</td>
-      <td>VACUUM LEAK DETECTOR</td>
-      <td>2011</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-    <tr>
-      <th>7256</th>
-      <td>a0w0V00000MefhpQAB</td>
-      <td>170197</td>
-      <td>HITACHI</td>
-      <td>S-3000N</td>
-      <td>REVIEW SEM</td>
-      <td>2003</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-    <tr>
-      <th>7563</th>
-      <td>a0w0V00000MefhtQAB</td>
-      <td>170201</td>
-      <td>KEYENCE</td>
-      <td>ML-Z9500/9510</td>
-      <td>LASER MARKER</td>
-      <td>2008</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-    <tr>
-      <th>7146</th>
-      <td>a0w0V00000MefhvQAB</td>
-      <td>170203</td>
-      <td>SHOWA SHINKU</td>
-      <td>SBC-10C</td>
-      <td>EVAPORATOR</td>
-      <td>1993</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-    <tr>
-      <th>7144</th>
-      <td>a0w0V00000MefhwQAB</td>
-      <td>170204</td>
-      <td>Uni-Hite System</td>
-      <td>XVA-160</td>
-      <td>X-ray 3D-CT System</td>
-      <td>2006</td>
-      <td>NaN</td>
-      <td>Hitachi Capital Corporation</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory_comparison_version</span> <span class="o">=</span> <span class="n">exist_inventory</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="s1">&#39;Postgres_Id__c&#39;</span><span class="p">,</span> <span class="s1">&#39;Account__r:Name&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">exist_inventory_comparison_version</span> <span class="o">=</span> <span class="n">exist_inventory</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="s1">&#39;Postgres_Id__c&#39;</span><span class="p">,</span> <span class="s1">&#39;Account__r:Name&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">exist_inventory_comparison_version</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Make__c&#39;</span><span class="p">:</span> <span class="s1">&#39;MANUFACTURER&#39;</span><span class="p">,</span> <span class="s1">&#39;Model__c&#39;</span><span class="p">:</span> <span class="s1">&#39;MODEL&#39;</span><span class="p">,</span> <span class="s1">&#39;Wafer_Size__c&#39;</span><span class="p">:</span> <span class="s1">&#39;WAFER SIZE&#39;</span><span class="p">,</span> <span class="s1">&#39;Description__c&#39;</span><span class="p">:</span> <span class="s1">&#39;EQUIPMENT&#39;</span><span class="p">,</span> <span class="s1">&#39;Vintage__c&#39;</span><span class="p">:</span> <span class="s1">&#39;VINTAGE&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">exist_inventory_comparison_version</span> <span class="o">=</span> <span class="n">exist_inventory_comparison_version</span><span class="p">[[</span><span class="s1">&#39;EQUIPMENT&#39;</span><span class="p">,</span> <span class="s1">&#39;MANUFACTURER&#39;</span><span class="p">,</span> <span class="s1">&#39;MODEL&#39;</span><span class="p">,</span> <span class="s1">&#39;WAFER SIZE&#39;</span><span class="p">,</span> <span class="s1">&#39;VINTAGE&#39;</span><span class="p">]]</span>
 <span class="n">exist_inventory_comparison_version</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -17818,7 +16851,7 @@ memory usage: 529.8+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[46]:</div>
+    <div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -17908,9 +16941,17 @@ memory usage: 529.8+ KB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pandas contains a function (<code>equals</code>) that allows us to compare two separate dataframes for data equality:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">exist_inventory_comparison_version</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">new_list_comparison_version</span><span class="p">)</span>
@@ -17926,7 +16967,7 @@ memory usage: 529.8+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[44]:</div>
 
 
 
@@ -17941,9 +16982,17 @@ memory usage: 529.8+ KB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Another Pandas function (<code>eq</code>) tell us which datapoints do not match between two dataframes:</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">comparison</span> <span class="o">=</span> <span class="n">exist_inventory_comparison_version</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">new_list_comparison_version</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
@@ -17960,7 +17009,7 @@ memory usage: 529.8+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[48]:</div>
+    <div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -18499,12 +17548,24 @@ memory usage: 529.8+ KB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Right away, we can see the whole of the <code>WAFER SIZE</code> column is different, with previous imperial measurement data being replaced with (apparently) metric data.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">comparison</span><span class="p">[(</span><span class="n">comparison</span><span class="p">[</span><span class="s1">&#39;EQUIPMENT&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wafer_exist</span> <span class="o">=</span> <span class="n">exist_inventory_comparison_version</span><span class="p">[</span><span class="s1">&#39;WAFER SIZE&#39;</span><span class="p">]</span>
+<span class="n">wafer_new</span> <span class="o">=</span> <span class="n">new_list_comparison_version</span><span class="p">[</span><span class="s1">&#39;WAFER SIZE&#39;</span><span class="p">]</span>
+<span class="n">wafer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">wafer_exist</span><span class="p">,</span> <span class="n">wafer_new</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">wafer</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;wafer_exist&#39;</span><span class="p">,</span> <span class="s1">&#39;wafer_new&#39;</span><span class="p">]</span>
+<span class="n">wafer</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -18517,7 +17578,103 @@ memory usage: 529.8+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>wafer_exist</th>
+      <th>wafer_new</th>
+    </tr>
+    <tr>
+      <th>TOOL CODE</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6792</th>
+      <td>6"</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>6851</th>
+      <td>8"</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>6908</th>
+      <td>8"</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>6914</th>
+      <td>8"</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>6917</th>
+      <td>8"</td>
+      <td>200</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In addition, a handful of other datapoints have changed as well. For example, equipment:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">equip_changes</span> <span class="o">=</span> <span class="n">comparison</span><span class="p">[(</span><span class="n">comparison</span><span class="p">[</span><span class="s1">&#39;EQUIPMENT&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span>
+<span class="n">equip_changes</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -18609,10 +17766,43 @@ memory usage: 529.8+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">equip_changes_codes</span> <span class="o">=</span> <span class="n">equip_changes</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">equip</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">equip_changes_codes</span><span class="p">:</span>
+    <span class="n">beef</span> <span class="o">=</span> <span class="n">exist_inventory_comparison_version</span><span class="p">[</span><span class="s1">&#39;EQUIPMENT&#39;</span><span class="p">][</span><span class="n">code</span><span class="p">]</span>
+    <span class="n">pork</span> <span class="o">=</span> <span class="n">new_list_comparison_version</span><span class="p">[</span><span class="s1">&#39;EQUIPMENT&#39;</span><span class="p">][</span><span class="n">code</span><span class="p">]</span>
+    <span class="n">equip</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;TOOL CODE&#39;</span><span class="p">:</span> <span class="n">code</span><span class="p">,</span> <span class="s1">&#39;equip_exist&#39;</span><span class="p">:</span> <span class="n">beef</span><span class="p">,</span> <span class="s1">&#39;equip_new&#39;</span><span class="p">:</span> <span class="n">pork</span><span class="p">})</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">comparison</span><span class="p">[(</span><span class="n">comparison</span><span class="p">[</span><span class="s1">&#39;MANUFACTURER&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">equip_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">equip</span><span class="p">)</span>
+<span class="n">equip_df</span> <span class="o">=</span> <span class="n">equip_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;TOOL CODE&#39;</span><span class="p">)</span>
+<span class="n">equip_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -18648,53 +17838,40 @@ memory usage: 529.8+ KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>EQUIPMENT</th>
-      <th>MANUFACTURER</th>
-      <th>MODEL</th>
-      <th>WAFER SIZE</th>
-      <th>VINTAGE</th>
+      <th>equip_exist</th>
+      <th>equip_new</th>
     </tr>
     <tr>
       <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>7159</th>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
+      <th>7144</th>
+      <td>X-ray 3D-CT System</td>
+      <td>X-ray 3D-CT SYSREM</td>
     </tr>
     <tr>
-      <th>7218</th>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
+      <th>7208</th>
+      <td>COATER_DEVELOPER</td>
+      <td>COATER</td>
     </tr>
     <tr>
-      <th>7219</th>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
+      <th>7267</th>
+      <td>NaN</td>
+      <td>HDP-CVD</td>
     </tr>
     <tr>
-      <th>8442</th>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>True</td>
+      <th>7290</th>
+      <td>GAS SCRUBBER</td>
+      <td>GAS    SCRUBBER</td>
+    </tr>
+    <tr>
+      <th>7291</th>
+      <td>GAS SCRUBBER</td>
+      <td>GAS    SCRUBBER</td>
     </tr>
   </tbody>
 </table>
@@ -18707,12 +17884,20 @@ memory usage: 529.8+ KB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But what's different about 7290 and 7291?</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">comparison</span><span class="p">[(</span><span class="n">comparison</span><span class="p">[</span><span class="s1">&#39;MODEL&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_list_comparison_version</span><span class="p">[</span><span class="s1">&#39;EQUIPMENT&#39;</span><span class="p">][</span><span class="mi">7290</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -18729,60 +17914,9 @@ memory usage: 529.8+ KB
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>EQUIPMENT</th>
-      <th>MANUFACTURER</th>
-      <th>MODEL</th>
-      <th>WAFER SIZE</th>
-      <th>VINTAGE</th>
-    </tr>
-    <tr>
-      <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7208</th>
-      <td>False</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>7519</th>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;GAS    SCRUBBER&#39;</pre>
 </div>
 
 </div>
@@ -18791,209 +17925,24 @@ memory usage: 529.8+ KB
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">comparison</span><span class="p">[(</span><span class="n">comparison</span><span class="p">[</span><span class="s1">&#39;VINTAGE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[52]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>EQUIPMENT</th>
-      <th>MANUFACTURER</th>
-      <th>MODEL</th>
-      <th>WAFER SIZE</th>
-      <th>VINTAGE</th>
-    </tr>
-    <tr>
-      <th>TOOL CODE</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7166</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7475</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7617</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7618</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7619</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7620</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7622</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7623</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7624</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7625</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7627</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7628</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7641</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7642</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>8134</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>8351</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>8352</th>
-      <td>True</td>
-      <td>True</td>
-      <td>True</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ah. The takeaway here, then, is that while it is possible to automatically fill in data from the new to the existing, it ight not be prudent without pre-cleaning.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.-LinkedIn-Data">3. LinkedIn Data<a class="anchor-link" href="#3.-LinkedIn-Data">&#182;</a></h1><p><em>Engineers at companies we work with will sometimes list the equipment they work on. For example, here is an engineer who says that they worked on “Advantest 93K, Teradyne Integra Flex, Teradyne J750 and Advantest T2K tester platform” while at Xilinx. How do you think we can go about collecting and using this type of data?</em></p>
+<p>There's two different activities being discussed in this question. The first is the collection of data, and there are several ways to go about this -- notably, collection by hand and web scraping. I have done both styles of data collecting, but I am much more interested in talking about the second activity: using collected data. Because of my background, i'm somewhat biased in how I think of useful applications of data. But when I see the descrtiption of activities and technologies in the example above, the first thing I think of is <em>ontology building</em>. (For the uninitiated, information professionals use ontologies to represent human knowledge through semantically-parsed relationships.)</p>
+<p>All four of the things mentioned in the LinkedIn profile are products of some kind, and it would be relatively easy to put these products into a database with basic metadata. But I'm more interested in doing deeper research on what these products do, who built them, who their intended audiences are, and the relationships between each other (if any). To me, that kind of information becomes more valuable than just stockpiling a list of potential products in a database. In addition, once this information is known, there's a good chance it can be used to enrich the structured data required by Google and other web consumers in site indexing.</p>
+<p>For example: say we create an ontology and add the Advantest V93000 (Advantest 93K) as a node. By researching and attaching supplemental information  about its intended audience, we might then be able to use it in the creation of Structured Data using Schema.org, the web ontology that Google, Bing, and Yahoo use to understand business audience data when indexing web pages. Schema.org includes metadata for products, using the URI <em><a href="https://schema.org/Product">https://schema.org/Product</a></em>; within that object type, we can add properties relating to its audience, through <em><a href="https://schema.org/audience">https://schema.org/audience</a></em>. By knowing more about the product, we might be able to leverage that knowledge as better SEO representation.</p>
 
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
