@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scott Carlson</title>
+    <link>/</link>
+    <description>Recent content on Scott Carlson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Scott</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>A data professional with 12+ years of academic library and non-profit experience, Scott is currently q Digital Library Software Engineer with Arizona State University.
+CV available here.
+SKILLS Markup, Data, &amp;amp; Web Standards: JSON, JSON-LD, XML, RDF, SKOS, Schema.org
+Library Metadata Standards: MARC, Dublin Core, DACS, RDA/AACR2
+Languages/Tools: Bash/CMD, Python/Jupyter, Git/Github, SQL, R
+Python Library Experience: Pandas, Fuzzywuzzy, Flask/Flask_Restful, lxml/Selenium, ArchivesSpaceSnake
+GLAM-Related Apps/Platforms/Cloud Services: MarcEdit, DSpace, ArchivesSpace, SirsiDynix Symphony, Ex Libris Alma</description>
+    </item>
+    
+    <item>
+      <title>Presentations</title>
+      <link>/presentations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/presentations/</guid>
+      <description>2018 &amp;ldquo;Meet the New Repository, Different from Your Old Repository: Migration Stories From the Front&amp;rdquo;
+Co-Presenter, Digital Library Federation Forum, Las Vegas (October 15, 2018). (Session Info) &amp;ldquo;DLF Metadata QA Workshop&amp;rdquo; (Group Github Repository)
+Co-Presenter (OpenRefine Section), Digital Library Federation Forum, Las Vegas (October 14, 2018). &amp;ldquo;Megaton Goes Boom: Archiving and Preserving My Father&#39;s First Comic Book&amp;rdquo;
+Personal Digital Archiving 2018 (April 23, 2018). (Session Info)
+2017 &amp;ldquo;The Wonderful World of Bots: Innovative Ways to Automate Library Marketing with Metadata and Twitter&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/</guid>
+      <description>Linked Data for the Perplexed Librarian
+Scheduled for publication in March of 2020 by ALA Editions. Music Preservation and Archiving Today
+Co-edited volume with Norie Guthrie, published by Rowman &amp;amp; Littlefield, 2018. ISBN: 9781538102947. Amazon Link &amp;ldquo;Using OpenRefine&#39;s Reconciliation to Validate Local Authority Headings&amp;rdquo;
+Journal Article in Cataloging and Classification Quarterly (Volume 55, Number 1, 2017). ​DOI: 10.1080/01639374.2016.1245693​ &amp;ldquo;When We&#39;re Done With it, We Don&#39;t Care What Happens to it: What Open Access Practitioners Can Learn From Deadheads&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>You Should Make a Twitter Bot for Your G/L/A/M&#39;s Digital Collection(s)</title>
+      <link>/you-should-make-a-twitter-bot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/you-should-make-a-twitter-bot/</guid>
+      <description>Yeah, why not? Despite the bad rap some bots are (deservedly) getting, Twitter bots can either be entertaining or a source of good, especially for galleries, libraries, archives, and museums with digital collections.
+I&#39;ve found the general public doesn&#39;t understand what cool things can be found in digital repositories and archives, much less know they exist. We can work to change that by putting our collections out there in a public setting for people to discover.</description>
+    </item>
+    
+  </channel>
+</rss>
