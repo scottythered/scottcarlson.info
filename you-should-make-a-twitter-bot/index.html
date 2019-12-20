@@ -9,10 +9,10 @@
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <meta name="description" content="In this single-page instruction guide, you&#39;ll build a Python Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag)." />
-<link rel="canonical" href="/you-should-make-a-twitter-bot/" />
+<link rel="canonical" href="https://www.scottcarlson.info/you-should-make-a-twitter-bot/" />
 <meta property="og:image" content="http://www.scottcarlson.info/img/card.jpg"/>
 <meta property="og:title" content="You Should Make a Twitter Bot for Your G/L/A/M&#39;s Digital Collection(s) | Scott Carlson: Software Engineer and Former Librarian" />
-<meta property="og:url" content="/you-should-make-a-twitter-bot/" />
+<meta property="og:url" content="https://www.scottcarlson.info/you-should-make-a-twitter-bot/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Scott Carlson"/>
 <meta property="og:description" content="In this single-page instruction guide, you&#39;ll build a Python Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag)." />
@@ -70,7 +70,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/presentations">Presentations</a></li><li><a href="/publications">Publications</a></li>
+    <ul class="menu__inner"><li><a href="https://www.scottcarlson.info/about">About</a></li><li><a href="https://www.scottcarlson.info/presentations">Presentations</a></li><li><a href="https://www.scottcarlson.info/publications">Publications</a></li>
     </ul>
 </nav>
 
@@ -97,7 +97,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="/you-should-make-a-twitter-bot/">You Should Make a Twitter Bot for Your G/L/A/M's Digital Collection(s)</a></h2>
+            <h2 class="post-title"><a href="https://www.scottcarlson.info/you-should-make-a-twitter-bot/">You Should Make a Twitter Bot for Your G/L/A/M's Digital Collection(s)</a></h2>
 
             
 
@@ -134,7 +134,7 @@
 </ul>
 <p>Treat these four codes like the passwords that they are.</p>
 <p>You'll also need to minimally set your &lsquo;Permissions&rsquo; tab to &lsquo;Read and Write Access&rsquo;:</p>
-<p><img src="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/twit1.png" alt="twit1"></p>
+<p><img src="/img/twit1.png" alt="twit1"></p>
 <h2 id="get-python">Get Python</h2>
 <p>If you already have Python, great &ndash; skip to the next step. If you're not sure, open whatever shell environment you have and type <code>python --version</code>.</p>
 <p>If you don't find Python, you'll need to follow the steps <a href="https://www.python.org/downloads/">here</a> to get Python installed. (I would recommend you Live In The Now and get Python 3, but YMMV.)</p>
@@ -250,7 +250,7 @@ for tweet in tweets:
 <p>So we're basically done, right? Well&hellip; it depends. Let's take a look at the Twitter bot <a href="https://twitter.com/nyplphotobot">NYPLphotobot</a>, built by <a href="https://twitter.com/backspace">John Emerson</a> &ndash; specifically <a href="https://twitter.com/NYPLphotobot/status/916164386548535296">this tweet</a>. The entirety of the tweet's text is:</p>
 <pre><code>Carol Channing surrounded by waiters in a scene from the Broadway revival of the musical &quot;Hello, Dolly!.&quot; (New... https://digitalcollections.nypl.org/items/b31f5d33-7c14-17da-e040-e00a18062482
 </code></pre><p>When the tweet is posted, however, a photo preview appears:</p>
-<p><img src="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/twit2.png" alt="twit2"></p>
+<p><img src="/img/twit2.png" alt="twit2"></p>
 <p>That's because the <a href="https://digitalcollections.nypl.org/items/b31f5d33-7c14-17da-e040-e00a18062482">item page at the New York Public Library's Digital Collection</a> contains a robust set of metadata. If you open up the page's source code, you'll see that metadata in the page's header <code>meta</code> tags:</p>
 <pre><code>&lt;meta property=&quot;og:image&quot; content=&quot;http://images.nypl.org/index.php?id=swope_277479&amp;t=w&quot; /&gt;
 &lt;meta property=&quot;og:title&quot; content=&quot;Carol Channing surrounded by waiters in a scene from the Broadway revival of the musical &amp;quot;Hello, Dolly!.&amp;quot; (New York)&quot; /&gt;
@@ -266,7 +266,7 @@ for tweet in tweets:
 &lt;meta name=&quot;twitter:creator&quot; content=&quot;@nypl&quot;&gt;
 </code></pre><p>The <code>og:</code> prefixes denote Open Graph tags, which enable web pages to become &ldquo;rich objects&rdquo; in social media. These are followed by <code>twitter:</code> tags, which are based on the same conventions as Open Graph protocol. When used together, these tags create preview cards when a link is tweeted out. (For more information, see <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started">here</a>.)</p>
 <p>The short version of this story is, if your digital collection's item pages don't have such meta tags, your tweets will lack the kind of preview seen in the NYPL bot, because there won't be tags like <code>og:image</code> or <code>twitter:image</code> for Twitter to grab a preview image. To wit:</p>
-<p><img src="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/twit3.png" alt="twit3"></p>
+<p><img src="/img/twit3.png" alt="twit3"></p>
 <p>This is obviously a problem, because as we discussed above, visuals help send people to links.</p>
 <h2 id="no-meta-tags-no-problem-sort-of">No Meta Tags? No Problem (Sort of)</h2>
 <p>If your digital collection is set up to where you can easily predict a direct link to the image for each collection item, then it's GOOD NEWS! We can work our way around this issue with an expanded script.</p>
@@ -416,8 +416,8 @@ with open('index.txt', 'w') as indexNew:
 <p>To open Crontab in your Unix/Linux shell, type <code>crontab -e</code> and follow the instructions. An example of this script running once a day at 10 am would look like:</p>
 <pre><code>0  10  *  *  *    [path to]/python3 [path to]/script.py
 </code></pre><p>Of course, we're back to the discussion of whether this particular computer will always be on, as to run the cron schedule.</p>
-<p>If you're absolutely paranoid, you might as well pay for a service that will schedule this for you. I currently pay $5 a month for the features of <a href="http://www.scottcarlson.info/you-should-make-a-twitter-bot/">PythonAnywhere</a>, which includes a cron scheduler for my set of virtual Python scripts:</p>
-<p><img src="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/twit4.png" alt="twit4"></p>
+<p>If you're absolutely paranoid, you might as well pay for a service that will schedule this for you. I currently pay $5 a month for the features of <a href="https://www.pythonanywhere.com/">PythonAnywhere</a>, which includes a cron scheduler for my set of virtual Python scripts:</p>
+<p><img src="/img/twit4.png" alt="twit4"></p>
 <p>Money well spent? I'd say so.</p>
 <p>&gt;&gt; <a href="http://scottcarlson.info">Home</a></p>
 
@@ -438,14 +438,14 @@ with open('index.txt', 'w') as indexNew:
                 <footer class="footer">
   <div class="footer__inner">
       <div>
-          &nbsp; <a href="https://twitter.com/scottythered" target="_blank" rel="noopener" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a> &nbsp;&nbsp; <a href="mailto:nobody@example.com" target="_blank" rel="noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;&nbsp; <a href="https://github.com/scottythered" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a> &nbsp;
+          &nbsp; <a href="https://twitter.com/scottythered" target="_blank" rel="noopener" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a> &nbsp;&nbsp; <a href="mailto:scott@scottcarlson.info" target="_blank" rel="noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;&nbsp; <a href="https://github.com/scottythered" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a> &nbsp;
       </div>
   </div>
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2019</span>
             
-                <span><a href="/">Scott Carlson</a></span>
+                <span><a href="https://www.scottcarlson.info/">Scott Carlson</a></span>
             
             <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
         </div>

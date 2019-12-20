@@ -3,31 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://www.scottcarlson.info/about/</loc>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://www.scottcarlson.info/presentations/</loc>
   </url>
   
   <url>
-    <loc>/presentations/</loc>
+    <loc>https://www.scottcarlson.info/publications/</loc>
   </url>
   
   <url>
-    <loc>/publications/</loc>
+    <loc>https://www.scottcarlson.info/</loc>
   </url>
   
   <url>
-    <loc>/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>/you-should-make-a-twitter-bot/</loc>
+    <loc>https://www.scottcarlson.info/you-should-make-a-twitter-bot/</loc>
   </url>
   
 </urlset>
