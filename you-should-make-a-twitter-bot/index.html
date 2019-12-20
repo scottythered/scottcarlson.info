@@ -1,229 +1,238 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta name="keywords" content="scott carlson, metadata, librarian, metadata librarian, archives, archivist, repositories, vinyl, grateful dead, frodis records, indie preserves" />
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Yes, you should make a Twitter bot to promote your gallery/library/archival/museum Digital Collection(s). I'll show you how.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You Should Make a Twitter Bot for Your Digital Collection(s) | Scott Carlson</title>
-  <link rel="stylesheet" href="css/main.css">
-  <meta property="og:image" content="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/1732834818.jpg" />
-<meta property="og:title" content="You Should Make a Twitter Bot for Your Digital Collection(s)" />
-<meta property="og:description" content="Yes, you should make a Twitter bot to promote your gallery/library/archival/museum Digital Collection(s). I'll show you how." />
-<meta property="og:url" content="http://www.scottcarlson.info/you-should-make-a-twitter-bot/" />
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Scott Carlson ">
+<meta name="keywords" content="scott carlson, data, metadata, librarian, metadata librarian, archives, archivist, repositories, vinyl, grateful dead, indie preserves" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<meta name="description" content="In this single-page instruction guide, you&#39;ll build a Python Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag)." />
+<link rel="canonical" href="/you-should-make-a-twitter-bot/" />
+<meta property="og:image" content="http://www.scottcarlson.info/img/card.jpg"/>
+<meta property="og:title" content="You Should Make a Twitter Bot for Your G/L/A/M&#39;s Digital Collection(s) | Scott Carlson: Software Engineer and Former Librarian" />
+<meta property="og:url" content="/you-should-make-a-twitter-bot/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Scott Carlson"/>
-<meta name="twitter:site" content="@scottythered">
-<meta name="twitter:title" content="You Should Make a Twitter Bot for Your Digital Collection(s)">
-<meta name="twitter:description" content="Yes, you should make a Twitter bot to promote your gallery/library/archival/museum Digital Collection(s). I'll show you how.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/1732834818.jpg">
-<meta name="twitter:creator" content="@scottythered">
+<meta property="og:description" content="In this single-page instruction guide, you&#39;ll build a Python Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag)." />
+<meta name="twitter:site" content="@scottythered"/>
+<meta name="twitter:title" content="You Should Make a Twitter Bot for Your G/L/A/M&#39;s Digital Collection(s) | Scott Carlson: Software Engineer and Former Librarian" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://www.scottcarlson.info/img/card.jpg"/>
+<meta name="twitter:creator" content="@scottythered"/>
+<meta name="twitter:description" content="In this single-page instruction guide, you&#39;ll build a Python Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag)." />
 
-</head>
-<body>
-  <div class="container">
-    <h1><a href="./">You Should Make a Twitter Bot for Your G/L/A/M's Digital Collection(s)</a></h1>
-    <p><img src="img/bar.png" alt="bar" /></p>
+<title>
+    
+        You Should Make a Twitter Bot for Your G/L/A/M&#39;s Digital Collection(s) | Scott Carlson: Software Engineer and Former Librarian
+    
+</title>
 
-<p>Yeah, why not? Despite the <a href="http://mashable.com/2017/09/25/russia-botnet-german-election-twitter/#GSp1JDZANiqN">bad rap some bots are (deservedly) getting</a>, Twitter bots <a href="https://techcrunch.com/2017/09/25/researchers-find-that-twitter-bots-can-be-used-for-good/">can either be entertaining</a> or a source of good, especially for galleries, libraries, archives, and museums with digital collections.</p>
 
-<p>I’ve found the general public doesn’t understand what cool things can be found in digital repositories and archives, much less know they exist. We can work to change that by putting our collections out there in a public setting for people to discover. This was the reason we built a Twitter bot to show off the digital collections of Rice University’s Woodson Research Center.</p>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
 
-<p><br /></p>
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">KTRU Rice University radio poster for 19th annual Outdoor Show. Find it at: <a href="https://t.co/GKd2IoAl1H">https://t.co/GKd2IoAl1H</a> <a href="https://t.co/W9EhzlwVur">pic.twitter.com/W9EhzlwVur</a></p>&mdash; WoodsonResearchCentr (@WoodsonRC_bot) <a href="https://twitter.com/WoodsonRC_bot/status/914868088738336769?ref_src=twsrc%5Etfw">October 2, 2017</a></blockquote>
-<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<p><br /></p>
 
-<p>In this single-page instruction guide, you’ll build a Python Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag).</p>
+<link rel="stylesheet" href="/main.min.12bb1f1379979ef7e2bc0abef58ae5388b157cde79f839791df77a3ded8a95e2.css">
 
-<h2 id="things-you-will-need">Things You will Need:</h2>
 
-<ul>
-  <li>A publicly-accessible repository/archive (with cool things in it!)</li>
-  <li>Access to the metadata of your repository/archive</li>
-  <li>A Twitter account with which you have administrative access</li>
-  <li><a href="https://www.python.org/">Python</a></li>
-  <li>A bit of command line experience wouldn’t hurt</li>
-  <li><a href="http://openrefine.org/">OpenRefine</a> is recommended but not absolutely necessary</li>
-</ul>
 
-<h2 id="a-few-things-to-consider">A Few Things to Consider</h2>
 
-<ul>
-  <li>A Twitter bot will work well with a collection focused on images – photos, drawings, artwork, etc. Visuals are incredibly helpful in getting people to click on links.</li>
-  <li>Creating a brand new Twitter account is encouraged, for simplicity’s sake. You may want to do some testing on your own account, but beware, as you test, things will get messy as you feel out your code.</li>
-  <li>Make sure your new account clearly states – in your description, user name, etc. – that it is a bot. Twitter has been known to diable accounts that act like bots but pretend they’re not.</li>
-</ul>
 
-<h2 id="set-up-your-twitter-app">Set Up Your Twitter App</h2>
 
-<p>First of all, if you haven’t already, you’ll need to <a href="https://apps.twitter.com/">set up developer access on your Twitter account</a>. Sign in with your account and start setting up a new ‘app.’ What you’re after here is obtaining the four unique codes we’ll need to start tweetin’ programmatically:</p>
 
-<ul>
-  <li>Consumer Key: required to authenticate your access (the ‘client’)</li>
-  <li>Consumer Secret: the password for the client</li>
-  <li>Access Token: defines what data the client can and cannot access</li>
-  <li>Access Token Secret: the password for the Access Token</li>
-</ul>
 
-<p>Treat these four codes like the passwords that they are.</p>
 
-<p>You’ll also need to minimally set your ‘Permissions’ tab to ‘Read and Write Access’:</p>
 
-<p><img src="img/twit1.png" alt="twit1" /></p>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","@id":"http://www.scottcarlson.info/#website","url":"http://www.scottcarlson.info/","name":"Scott Carlson | Data Professional and Former Metadata Librarian","about":{"@type":"Person","name":"Scott Carlson","additionalName":"Scotty Carlson","jobTitle":["data manager","metadata librarian"],"sameAs":["http://www.wikidata.org/entity/Q50278901","http://id.loc.gov/authorities/names/n2017074015","http://viaf.org/viaf/93151351966152600331","http://d-nb.info/gnd/1161365265","https://twitter.com/scottythered"],"worksFor":{"@type":"Organization","name":"Asseta","sameAs":["http://www.wikidata.org/entity/Q63165412","https://twitter.com/AssetaHQ"]}},"mainEntity":{"@type":"Person","name":"Scott Carlson","additionalName":"Scotty Carlson","jobTitle":["data manager","metadata librarian"],"sameAs":["http://www.wikidata.org/entity/Q50278901","http://id.loc.gov/authorities/names/n2017074015","http://viaf.org/viaf/93151351966152600331","http://d-nb.info/gnd/1161365265"],"worksFor":{"@type":"Organization","name":"Asseta","sameAs":["http://www.wikidata.org/entity/Q63165412","https://twitter.com/AssetaHQ"]}}}
+</script>
 
-<h2 id="get-python">Get Python</h2>
+    </head>
 
-<p>If you already have Python, great – skip to the next step. If you’re not sure, open whatever shell environment you have and type <code class="highlighter-rouge">python --version</code>.</p>
+    <body class="">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">scottcarlson.info</span>
+            <span class="logo__cursor" style=""></span>
+        
+    </div>
+</a>
 
-<p>If you don’t find Python, you’ll need to follow the steps <a href="https://www.python.org/downloads/">here</a> to get Python installed. (I would recommend you Live In The Now and get Python 3, but YMMV.)</p>
 
-<h2 id="why-python">“Why Python?”</h2>
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/presentations">Presentations</a></li><li><a href="/publications">Publications</a></li>
+    </ul>
+</nav>
 
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/you-should-make-a-twitter-bot/">You Should Make a Twitter Bot for Your G/L/A/M's Digital Collection(s)</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>Yeah, why not? Despite the <a href="http://mashable.com/2017/09/25/russia-botnet-german-election-twitter/#GSp1JDZANiqN">bad rap some bots are (deservedly) getting</a>, Twitter bots <a href="https://techcrunch.com/2017/09/25/researchers-find-that-twitter-bots-can-be-used-for-good/">can either be entertaining</a> or a source of good, especially for galleries, libraries, archives, and museums with digital collections.</p>
+<p>I've found the general public doesn't understand what cool things can be found in digital repositories and archives, much less know they exist. We can work to change that by putting our collections out there in a public setting for people to discover. This was the reason we built a Twitter bot to show off the digital collections of Rice University's Woodson Research Center.</p>
 <blockquote>
-  <p>Python is a “batteries included” computer programming language. More concretely, Python is a programming language that, in contrast to other programming languages, allows users to more readily focus and solve domain problems instead of dealing with the complexity of how a computer operates. <a href="https://unidata.github.io/online-python-training/introduction.html">(Source)</a></p>
+<p>KTRU Rice University radio poster for 19th annual Outdoor Show. Find it at: <a href="https://t.co/GKd2IoAl1H">https://t.co/GKd2IoAl1H</a> <a href="https://t.co/W9EhzlwVur">pic.twitter.com/W9EhzlwVur</a></p>
+<p>&mdash; WoodsonResearchCentr (@WoodsonRC_bot) <a href="https://twitter.com/WoodsonRC_bot/status/914868088738336769?ref_src=twsrc%5Etfw">October 2, 2017</a></p>
 </blockquote>
-
-<h2 id="is-python-the-only-way-to-do-this">“Is Python the only way to do this?”</h2>
-
+<p>In this single-page instruction guide, you'll build a Python Twitter bot from the ground-up and get a taste of programmatic thinking (if that sort of thing sounds like your bag).</p>
+<h2 id="things-you-will-need">Things You will Need:</h2>
+<ul>
+<li>A publicly-accessible repository/archive (with cool things in it!)</li>
+<li>Access to the metadata of your repository/archive</li>
+<li>A Twitter account with which you have administrative access</li>
+<li><a href="https://www.python.org/">Python</a></li>
+<li>A bit of command line experience wouldn't hurt</li>
+<li><a href="http://openrefine.org/">OpenRefine</a> is recommended but not absolutely necessary</li>
+</ul>
+<h2 id="a-few-things-to-consider">A Few Things to Consider</h2>
+<ul>
+<li>A Twitter bot will work well with a collection focused on images &ndash; photos, drawings, artwork, etc. Visuals are incredibly helpful in getting people to click on links.</li>
+<li>Creating a brand new Twitter account is encouraged, for simplicity's sake. You may want to do some testing on your own account, but beware, as you test, things will get messy as you feel out your code.</li>
+<li>Make sure your new account clearly states &ndash; in your description, user name, etc. &ndash; that it is a bot. Twitter has been known to diable accounts that act like bots but pretend they're not.</li>
+</ul>
+<h2 id="set-up-your-twitter-app">Set Up Your Twitter App</h2>
+<p>First of all, if you haven't already, you'll need to <a href="https://apps.twitter.com/">set up developer access on your Twitter account</a>. Sign in with your account and start setting up a new &lsquo;app.&rsquo; What you're after here is obtaining the four unique codes we'll need to start tweetin&rsquo; programmatically:</p>
+<ul>
+<li>Consumer Key: required to authenticate your access (the &lsquo;client&rsquo;)</li>
+<li>Consumer Secret: the password for the client</li>
+<li>Access Token: defines what data the client can and cannot access</li>
+<li>Access Token Secret: the password for the Access Token</li>
+</ul>
+<p>Treat these four codes like the passwords that they are.</p>
+<p>You'll also need to minimally set your &lsquo;Permissions&rsquo; tab to &lsquo;Read and Write Access&rsquo;:</p>
+<p><img src="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/twit1.png" alt="twit1"></p>
+<h2 id="get-python">Get Python</h2>
+<p>If you already have Python, great &ndash; skip to the next step. If you're not sure, open whatever shell environment you have and type <code>python --version</code>.</p>
+<p>If you don't find Python, you'll need to follow the steps <a href="https://www.python.org/downloads/">here</a> to get Python installed. (I would recommend you Live In The Now and get Python 3, but YMMV.)</p>
+<h2 id="why-python">&ldquo;Why Python?&rdquo;</h2>
+<blockquote>
+<p>Python is a &ldquo;batteries included&rdquo; computer programming language. More concretely, Python is a programming language that, in contrast to other programming languages, allows users to more readily focus and solve domain problems instead of dealing with the complexity of how a computer operates. <a href="https://unidata.github.io/online-python-training/introduction.html">(Source)</a></p>
+</blockquote>
+<h2 id="is-python-the-only-way-to-do-this">&ldquo;Is Python the only way to do this?&rdquo;</h2>
 <p>Not at all! Programmatic tweeting can be done in lots of other languages.</p>
-
-<h2 id="are-you-going-to-show-other-language-methods">“Are you going to show other language methods?”</h2>
-
+<h2 id="are-you-going-to-show-other-language-methods">&ldquo;Are you going to show other language methods?&rdquo;</h2>
 <p>Nope. At this time, Python is my main language of operation.</p>
-
-<h2 id="lets-punch-it">Let’s Punch it</h2>
-
-<p>Now that we have Python installed, it’s time to get Tweepy in here. Type this into the shell:</p>
-
-<p><code class="highlighter-rouge">pip install tweepy</code></p>
-
+<h2 id="lets-punch-it">Let's Punch it</h2>
+<p>Now that we have Python installed, it's time to get Tweepy in here. Type this into the shell:</p>
+<p><code>pip install tweepy</code></p>
 <p>This will install <a href="http://www.tweepy.org/">Tweepy</a>, a Python library that facilitates interactions with the Twitter API. Once we install Tweepy, Python Twitter scripting becomes exponentially easier. To wit:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
+<pre><code>from tweepy import OAuthHandler
 from tweepy import API
 
-consumer_key="XXXXXXXXXXX"
-consumer_secret="XXXXXXXXXXX"
-access_token="XXXXXXXXXXX"
-access_token_secret="XXXXXXXXXXX"
+consumer_key=&quot;XXXXXXXXXXX&quot;
+consumer_secret=&quot;XXXXXXXXXXX&quot;
+access_token=&quot;XXXXXXXXXXX&quot;
+access_token_secret=&quot;XXXXXXXXXXX&quot;
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = API(auth)
-</code></pre>
-</div>
-
-<p>This above script header essentially readies your keys and tokens into place for making calls to the Twitter API. Once we have this set up in a Python script, the Twitter world is our oyster. (Of course, you’ll replace the X values with your actual keys and tokens.)</p>
-
+</code></pre><p>This above script header essentially readies your keys and tokens into place for making calls to the Twitter API. Once we have this set up in a Python script, the Twitter world is our oyster. (Of course, you'll replace the X values with your actual keys and tokens.)</p>
 <p>Say, for example, we want to get the actual text of what this account has already tweeted, all we would need to append to the above is:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>public_tweets = api.home_timeline()
+<pre><code>public_tweets = api.home_timeline()
 for tweet in public_tweets:
     print(tweet.text)
-</code></pre>
-</div>
-
-<p>Let’s get to the main event: tweeting via the API. It’s actually incredibly simple, so let’s do your first API transmission:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
+</code></pre><p>Let's get to the main event: tweeting via the API. It's actually incredibly simple, so let's do your first API transmission:</p>
+<pre><code>from tweepy import OAuthHandler
 from tweepy import API
 
-consumer_key="XXXXXXXXXXX"
-consumer_secret="XXXXXXXXXXX"
-access_token="XXXXXXXXXXX"
-access_token_secret="XXXXXXXXXXX"
+consumer_key=&quot;XXXXXXXXXXX&quot;
+consumer_secret=&quot;XXXXXXXXXXX&quot;
+access_token=&quot;XXXXXXXXXXX&quot;
+access_token_secret=&quot;XXXXXXXXXXX&quot;
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = API(auth)
 
-tweet = "Hello, world!"
+tweet = &quot;Hello, world!&quot;
 api.update_status(tweet)
-</code></pre>
-</div>
-
-<p>As you can see, we set our new tweet as the variable <code class="highlighter-rouge">tweet</code> and used the <code class="highlighter-rouge">api</code> variable to send it out as a status update.</p>
-
-<p>So, what if you had a thousand or so ready-made tweets? You could rewrite this script to tweet them periodically. This is precisely why G/L/A/M digital collections are ripe for Twitter bots – all you need is a modified script and a butt-load of solid metadata to start promoting your data.</p>
-
-<p>For example, let’s set up a list of tweets we want to send. Each tweet includes the description of a digital collection item along with the link to the item. We’ll store these tweets in a JSON file, with each tweet being a value of an array:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nt">"tweets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"Lecture in Faculty Chamber, at Formal Opening of Rice Institute. Find it at: http://hdl.handle.net/1911/64453"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"George R. Brown, portrait. Find it at: http://hdl.handle.net/1911/64454"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Rice Institute Commencement procession. Find it at: http://hdl.handle.net/1911/64457"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Rice University Commencement procession. Find it at: http://hdl.handle.net/1911/64460"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Rice University Commencement group of graduates. Find it at: http://hdl.handle.net/1911/64461"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"Rice University Commencement, view of graduates through the Sallyport, Lovett Hall. Find it at: http://hdl.handle.net/1911/64468"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"College Bowl, view of participants at panel. Find it at: http://hdl.handle.net/1911/64470"</span><span class="w">
-   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
-
-<p>Let’s modify our existing script to parse the JSON file to get the tweets. First, we’ll need to add the JSON module to the header:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
+</code></pre><p>As you can see, we set our new tweet as the variable <code>tweet</code> and used the <code>api</code> variable to send it out as a status update.</p>
+<p>So, what if you had a thousand or so ready-made tweets? You could rewrite this script to tweet them periodically. This is precisely why G/L/A/M digital collections are ripe for Twitter bots &ndash; all you need is a modified script and a butt-load of solid metadata to start promoting your data.</p>
+<p>For example, let's set up a list of tweets we want to send. Each tweet includes the description of a digital collection item along with the link to the item. We'll store these tweets in a JSON file, with each tweet being a value of an array:</p>
+<pre><code>{
+   &quot;tweets&quot;: [
+      &quot;Lecture in Faculty Chamber, at Formal Opening of Rice Institute. Find it at: http://hdl.handle.net/1911/64453&quot;,
+      &quot;George R. Brown, portrait. Find it at: http://hdl.handle.net/1911/64454&quot;,
+      &quot;Rice Institute Commencement procession. Find it at: http://hdl.handle.net/1911/64457&quot;,
+      &quot;Rice University Commencement procession. Find it at: http://hdl.handle.net/1911/64460&quot;,
+      &quot;Rice University Commencement group of graduates. Find it at: http://hdl.handle.net/1911/64461&quot;,
+      &quot;Rice University Commencement, view of graduates through the Sallyport, Lovett Hall. Find it at: http://hdl.handle.net/1911/64468&quot;,
+      &quot;College Bowl, view of participants at panel. Find it at: http://hdl.handle.net/1911/64470&quot;
+   ]
+}
+</code></pre><p>Let's modify our existing script to parse the JSON file to get the tweets. First, we'll need to add the JSON module to the header:</p>
+<pre><code>from tweepy import OAuthHandler
 from tweepy import API
 import json
-</code></pre>
-</div>
-
-<p>Then, below the API calls, we replace our ‘Hello, World!’ command with:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># opens our JSON file
+</code></pre><p>Then, below the API calls, we replace our &lsquo;Hello, World!&rsquo; command with:</p>
+<pre><code># opens our JSON file
 json_input = open('[json file name]')
 
 # loads our JSON file
 data = json.load(json_input)
 
 # selects the specific node from the JSON
-tweets = data["tweets"]
+tweets = data[&quot;tweets&quot;]
 
 for tweet in tweets:
       api.update_status(tweet)
-</code></pre>
-</div>
-
-<p>This will tweet out each individual status update in quick succession. Of course, we don’t want this to happen – we need to space out our tweets so that we don’t run out of tweet material, and we don’t want to incur the wrath of <a href="https://developer.twitter.com/en/docs/basics/rate-limiting">Twitter’s API usage limits</a>. We’ll need to pause in between each tweet.</p>
-
-<p>Luckily, Python comes with a module called <code class="highlighter-rouge">time</code> that will allow us to suspend the script in between tweets, using the <code class="highlighter-rouge">sleep</code> command.</p>
-
-<p>Let’s update the header again:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
+</code></pre><p>This will tweet out each individual status update in quick succession. Of course, we don't want this to happen &ndash; we need to space out our tweets so that we don't run out of tweet material, and we don't want to incur the wrath of <a href="https://developer.twitter.com/en/docs/basics/rate-limiting">Twitter's API usage limits</a>. We'll need to pause in between each tweet.</p>
+<p>Luckily, Python comes with a module called <code>time</code> that will allow us to suspend the script in between tweets, using the <code>sleep</code> command.</p>
+<p>Let's update the header again:</p>
+<pre><code>from tweepy import OAuthHandler
 from tweepy import API
 import json
 from time import sleep
-</code></pre>
-</div>
-
-<p>…And let’s add the sleep module after each tweet:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>for tweet in tweets:
+</code></pre><p>&hellip;And let's add the sleep module after each tweet:</p>
+<pre><code>for tweet in tweets:
       api.update_status(tweet)
       sleep(1800)
-</code></pre>
-</div>
-
-<p>(The sleep command is measured in seconds; 1,800 seconds equals a tweet every 30 minutes.)</p>
-
+</code></pre><p>(The sleep command is measured in seconds; 1,800 seconds equals a tweet every 30 minutes.)</p>
 <p>The entire script looks like this:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
+<pre><code>from tweepy import OAuthHandler
 from tweepy import API
 import json
 from time import sleep
 
-consumer_key="XXXXXXXXXXX"
-consumer_secret="XXXXXXXXXXX"
-access_token="XXXXXXXXXXX"
-access_token_secret="XXXXXXXXXXX"
+consumer_key=&quot;XXXXXXXXXXX&quot;
+consumer_secret=&quot;XXXXXXXXXXX&quot;
+access_token=&quot;XXXXXXXXXXX&quot;
+access_token_secret=&quot;XXXXXXXXXXX&quot;
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -231,102 +240,67 @@ api = API(auth)
 
 json_input = open('[JSON file]')
 data = json.load(json_input)
-tweets = data["tweets"]
+tweets = data[&quot;tweets&quot;]
 
 for tweet in tweets:
       api.update_status(tweet)
       sleep(1800)
-</code></pre>
-</div>
-
-<p>(<a href="https://gist.github.com/scottythered/0eb069181e1f0a503d0bb4ecaa9823fa">Gist version</a>)</p>
-
+</code></pre><p>(<a href="https://gist.github.com/scottythered/0eb069181e1f0a503d0bb4ecaa9823fa">Gist version</a>)</p>
 <h2 id="pardon-me-while-i-have-a-metadata-interlude">Pardon Me While I Have a Metadata Interlude</h2>
-
-<p>So we’re basically done, right? Well… it depends. Let’s take a look at the Twitter bot <a href="https://twitter.com/nyplphotobot">NYPLphotobot</a>, built by <a href="https://twitter.com/backspace">John Emerson</a> – specifically <a href="https://twitter.com/NYPLphotobot/status/916164386548535296">this tweet</a>. The entirety of the tweet’s text is:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>Carol Channing surrounded by waiters in a scene from the Broadway revival of the musical "Hello, Dolly!." (New… https://digitalcollections.nypl.org/items/b31f5d33-7c14-17da-e040-e00a18062482
-</code></pre>
-</div>
-
-<p>When the tweet is posted, however, a photo preview appears:</p>
-
-<p><img src="img/twit2.png" alt="twit2" /></p>
-
-<p>That’s because the <a href="https://digitalcollections.nypl.org/items/b31f5d33-7c14-17da-e040-e00a18062482">item page at the New York Public Library’s Digital Collection</a> contains a robust set of metadata. If you open up the page’s source code, you’ll see that metadata in the page’s header <code class="highlighter-rouge">meta</code> tags:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;meta property="og:image" content="http://images.nypl.org/index.php?id=swope_277479&amp;t=w" /&gt;
-&lt;meta property="og:title" content="Carol Channing surrounded by waiters in a scene from the Broadway revival of the musical &amp;quot;Hello, Dolly!.&amp;quot; (New York)" /&gt;
-&lt;meta property="og:description" content="One of hundreds of thousands of free digital items from The New York Public Library." /&gt;
-&lt;meta property="og:url" content="http://digitalcollections.nypl.org/items/b31f5d33-7c14-17da-e040-e00a18062482" /&gt;
-&lt;meta property="og:type" content="website" /&gt;
-&lt;meta property="og:site_name" content="NYPL Digital Collections"/&gt;
-&lt;meta name="twitter:site" content="@nypl"&gt;
-&lt;meta name="twitter:title" content="Carol Channing surrounded by waiters in a scene from the Broadway revival of the musical &amp;quot;Hello, Dolly!.&amp;quot; (New York)"&gt;
-&lt;meta name="twitter:description" content="One of hundreds of thousands of free digital items from The New York Public Library."&gt;
-&lt;meta name="twitter:card" content="summary_large_image"&gt;
-&lt;meta name="twitter:image" content="http://images.nypl.org/index.php?id=swope_277479&amp;t=w"&gt;
-&lt;meta name="twitter:creator" content="@nypl"&gt;
-</code></pre>
-</div>
-
-<p>The <code class="highlighter-rouge">og:</code> prefixes denote Open Graph tags, which enable web pages to become “rich objects” in social media. These are followed by <code class="highlighter-rouge">twitter:</code> tags, which are based on the same conventions as Open Graph protocol. When used together, these tags create preview cards when a link is tweeted out. (For more information, see <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started">here</a>.)</p>
-
-<p>The short version of this story is, if your digital collection’s item pages don’t have such meta tags, your tweets will lack the kind of preview seen in the NYPL bot, because there won’t be tags like <code class="highlighter-rouge">og:image</code> or <code class="highlighter-rouge">twitter:image</code> for Twitter to grab a preview image. To wit:</p>
-
-<p><img src="img/twit3.png" alt="twit3" /></p>
-
+<p>So we're basically done, right? Well&hellip; it depends. Let's take a look at the Twitter bot <a href="https://twitter.com/nyplphotobot">NYPLphotobot</a>, built by <a href="https://twitter.com/backspace">John Emerson</a> &ndash; specifically <a href="https://twitter.com/NYPLphotobot/status/916164386548535296">this tweet</a>. The entirety of the tweet's text is:</p>
+<pre><code>Carol Channing surrounded by waiters in a scene from the Broadway revival of the musical &quot;Hello, Dolly!.&quot; (New... https://digitalcollections.nypl.org/items/b31f5d33-7c14-17da-e040-e00a18062482
+</code></pre><p>When the tweet is posted, however, a photo preview appears:</p>
+<p><img src="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/twit2.png" alt="twit2"></p>
+<p>That's because the <a href="https://digitalcollections.nypl.org/items/b31f5d33-7c14-17da-e040-e00a18062482">item page at the New York Public Library's Digital Collection</a> contains a robust set of metadata. If you open up the page's source code, you'll see that metadata in the page's header <code>meta</code> tags:</p>
+<pre><code>&lt;meta property=&quot;og:image&quot; content=&quot;http://images.nypl.org/index.php?id=swope_277479&amp;t=w&quot; /&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;Carol Channing surrounded by waiters in a scene from the Broadway revival of the musical &amp;quot;Hello, Dolly!.&amp;quot; (New York)&quot; /&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;One of hundreds of thousands of free digital items from The New York Public Library.&quot; /&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;http://digitalcollections.nypl.org/items/b31f5d33-7c14-17da-e040-e00a18062482&quot; /&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;website&quot; /&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;NYPL Digital Collections&quot;/&gt;
+&lt;meta name=&quot;twitter:site&quot; content=&quot;@nypl&quot;&gt;
+&lt;meta name=&quot;twitter:title&quot; content=&quot;Carol Channing surrounded by waiters in a scene from the Broadway revival of the musical &amp;quot;Hello, Dolly!.&amp;quot; (New York)&quot;&gt;
+&lt;meta name=&quot;twitter:description&quot; content=&quot;One of hundreds of thousands of free digital items from The New York Public Library.&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;twitter:image&quot; content=&quot;http://images.nypl.org/index.php?id=swope_277479&amp;t=w&quot;&gt;
+&lt;meta name=&quot;twitter:creator&quot; content=&quot;@nypl&quot;&gt;
+</code></pre><p>The <code>og:</code> prefixes denote Open Graph tags, which enable web pages to become &ldquo;rich objects&rdquo; in social media. These are followed by <code>twitter:</code> tags, which are based on the same conventions as Open Graph protocol. When used together, these tags create preview cards when a link is tweeted out. (For more information, see <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started">here</a>.)</p>
+<p>The short version of this story is, if your digital collection's item pages don't have such meta tags, your tweets will lack the kind of preview seen in the NYPL bot, because there won't be tags like <code>og:image</code> or <code>twitter:image</code> for Twitter to grab a preview image. To wit:</p>
+<p><img src="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/twit3.png" alt="twit3"></p>
 <p>This is obviously a problem, because as we discussed above, visuals help send people to links.</p>
-
 <h2 id="no-meta-tags-no-problem-sort-of">No Meta Tags? No Problem (Sort of)</h2>
-
-<p>If your digital collection is set up to where you can easily predict a direct link to the image for each collection item, then it’s GOOD NEWS! We can work our way around this issue with an expanded script.</p>
-
-<p>Using our previous JSON example as a starting point, we’ll create an array of JSON objects that include the texts of our tweets along with the direct link to our images:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nt">"tweets"</span><span class="p">:[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"text"</span><span class="p">:</span><span class="s2">"Lecture in Faculty Chamber, at Formal Opening of Rice Institute. Find it at: http://hdl.handle.net/1911/64453"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"img"</span><span class="p">:</span><span class="s2">"https://scholarship.rice.edu/bitstream/handle/1911/64453/wrc00005.jpg"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"text"</span><span class="p">:</span><span class="s2">"George R. Brown, portrait. Find it at: http://hdl.handle.net/1911/64454"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"img"</span><span class="p">:</span><span class="s2">"https://scholarship.rice.edu/bitstream/handle/1911/64454/wrc01588.jpg"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"text"</span><span class="p">:</span><span class="s2">"Rice Institute Commencement procession. Find it at: http://hdl.handle.net/1911/64457"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"img"</span><span class="p">:</span><span class="s2">"https://scholarship.rice.edu/bitstream/handle/1911/64457/wrc01693.jpg"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-   </span><span class="err">...</span><span class="w">
-   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
-
-<p>(This method assumes that each of your collection’s objects have a single image that can be predictably linked to. If your objects tend to have more than one image, you’ll need to account for this in advance, and select only one of them to be posted.)</p>
-
-<p>Our script, of course, is going to be slightly more complicated. We’ll need to update the script header with two new modules, <code class="highlighter-rouge">urllib.request</code> and <code class="highlighter-rouge">os</code>:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
+<p>If your digital collection is set up to where you can easily predict a direct link to the image for each collection item, then it's GOOD NEWS! We can work our way around this issue with an expanded script.</p>
+<p>Using our previous JSON example as a starting point, we'll create an array of JSON objects that include the texts of our tweets along with the direct link to our images:</p>
+<pre><code>{
+   &quot;tweets&quot;:[
+      {
+         &quot;text&quot;:&quot;Lecture in Faculty Chamber, at Formal Opening of Rice Institute. Find it at: http://hdl.handle.net/1911/64453&quot;,
+         &quot;img&quot;:&quot;https://scholarship.rice.edu/bitstream/handle/1911/64453/wrc00005.jpg&quot;
+      },
+      {
+         &quot;text&quot;:&quot;George R. Brown, portrait. Find it at: http://hdl.handle.net/1911/64454&quot;,
+         &quot;img&quot;:&quot;https://scholarship.rice.edu/bitstream/handle/1911/64454/wrc01588.jpg&quot;
+      },
+      {
+         &quot;text&quot;:&quot;Rice Institute Commencement procession. Find it at: http://hdl.handle.net/1911/64457&quot;,
+         &quot;img&quot;:&quot;https://scholarship.rice.edu/bitstream/handle/1911/64457/wrc01693.jpg&quot;
+      },
+   ...
+   ]
+}
+</code></pre><p>(This method assumes that each of your collection's objects have a single image that can be predictably linked to. If your objects tend to have more than one image, you'll need to account for this in advance, and select only one of them to be posted.)</p>
+<p>Our script, of course, is going to be slightly more complicated. We'll need to update the script header with two new modules, <code>urllib.request</code> and <code>os</code>:</p>
+<pre><code>from tweepy import OAuthHandler
 from tweepy import API
 import json
 from time import sleep
 import urllib.request
 import os
-</code></pre>
-</div>
-
-<p>The beginning of the script looks the same…</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>json_input = open('[json file name]')
+</code></pre><p>The beginning of the script looks the same&hellip;</p>
+<pre><code>json_input = open('[json file name]')
 data = json.load(json_input)
-</code></pre>
-</div>
-
-<p>…But below, we have more going on:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>for x in data['tweets']:
+</code></pre><p>&hellip;But below, we have more going on:</p>
+<pre><code>for x in data['tweets']:
   # When the script is run, the linked image for each tweet is downloaded locally:
   urllib.request.urlretrieve(x['img'], 'image-temp.jpg')
   filename = ('image-temp.jpg')
@@ -335,22 +309,18 @@ data = json.load(json_input)
   # Once finished, the downloaded image is purged:
   os.remove(filename)
 	sleep(1800)
-</code></pre>
-</div>
-
-<p>Once again, the whole script:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
+</code></pre><p>Once again, the whole script:</p>
+<pre><code>from tweepy import OAuthHandler
 from tweepy import API
 import json
 from time import sleep
 import urllib.request
 import os
 
-consumer_key="XXXXXXXXXXX"
-consumer_secret="XXXXXXXXXXX"
-access_token="XXXXXXXXXXX"
-access_token_secret="XXXXXXXXXXX"
+consumer_key=&quot;XXXXXXXXXXX&quot;
+consumer_secret=&quot;XXXXXXXXXXX&quot;
+access_token=&quot;XXXXXXXXXXX&quot;
+access_token_secret=&quot;XXXXXXXXXXX&quot;
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -365,24 +335,19 @@ for x in data['tweets']:
   api.update_with_media(filename, status=x['text'])
   os.remove(filename)
   sleep(1800)
-</code></pre>
-</div>
-
-<p>(<a href="https://gist.github.com/scottythered/c044435bcccba1e301c0c44b631d3b8c">Gist version</a>)</p>
-
-<p>Of course, JSON isn’t the only way to do this. You could set a script to read from a CSV with two columns, img and tweet:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
+</code></pre><p>(<a href="https://gist.github.com/scottythered/c044435bcccba1e301c0c44b631d3b8c">Gist version</a>)</p>
+<p>Of course, JSON isn't the only way to do this. You could set a script to read from a CSV with two columns, img and tweet:</p>
+<pre><code>from tweepy import OAuthHandler
 from tweepy import API
 import urllib.request
 import os
 import csv
 from time import sleep
 
-consumer_key="XXXXXXXXXXX"
-consumer_secret="XXXXXXXXXXX"
-access_token="XXXXXXXXXXX"
-access_token_secret="XXXXXXXXXXX"
+consumer_key=&quot;XXXXXXXXXXX&quot;
+consumer_secret=&quot;XXXXXXXXXXX&quot;
+access_token=&quot;XXXXXXXXXXX&quot;
+access_token_secret=&quot;XXXXXXXXXXX&quot;
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -398,36 +363,27 @@ for img, tweet in reader:
     api.update_with_media(filename, status=tweet)
     os.remove(filename)
   	sleep(1800)
-</code></pre>
-</div>
-
-<h2 id="one-last-thing">One Last Thing</h2>
-
-<p>If you’re planning on setting up a Twitter bot for your G/L/A/M collection(s), chances are you have quite a few things to share with the world. It would be quite easy to set up thousands of tweets ready to go for programmatic tweeting however, if you haven’t noticed yet, the above scripts are intended to be left open as the script loops through all of the tweet data from start to finish. If you have thousands of tweets to send, this means you will have a very lengthy, open-ended shell session that you won’t be able to close. If you do close it and re-run the script the later, it will start over from the top and attempt to send out tweets that have already been sent. (Luckily, or sadly depending on your viewpoint, Twitter does not allow the same tweet to be programmatically tweeted.) So unless you can guarantee the computer running this script will never need to be restarted, you might need another approach.</p>
-
-<p>One method is to set up a secondary text file, which will act as a log of sorts. In the same directory as your JSON tweet data, create a plain-text file called <code class="highlighter-rouge">index.txt</code>. Open <code class="highlighter-rouge">index.txt</code> and type a zero (‘0’). Save the file.</p>
-
+</code></pre><h2 id="one-last-thing">One Last Thing</h2>
+<p>If you're planning on setting up a Twitter bot for your G/L/A/M collection(s), chances are you have quite a few things to share with the world. It would be quite easy to set up thousands of tweets ready to go for programmatic tweeting however, if you haven't noticed yet, the above scripts are intended to be left open as the script loops through all of the tweet data from start to finish. If you have thousands of tweets to send, this means you will have a very lengthy, open-ended shell session that you won't be able to close. If you do close it and re-run the script the later, it will start over from the top and attempt to send out tweets that have already been sent. (Luckily, or sadly depending on your viewpoint, Twitter does not allow the same tweet to be programmatically tweeted.) So unless you can guarantee the computer running this script will never need to be restarted, you might need another approach.</p>
+<p>One method is to set up a secondary text file, which will act as a log of sorts. In the same directory as your JSON tweet data, create a plain-text file called <code>index.txt</code>. Open <code>index.txt</code> and type a zero (&lsquo;0&rsquo;). Save the file.</p>
 <p>Now that we have an index file, we can modify our script to do the following:</p>
-
 <ol>
-  <li>Each time the script is run, the first thing it does is check the index file, which will return an number.</li>
-  <li>The script will then parse the array of objects in the JSON file, and jump to the object corresponding to the number found in our index file.</li>
-  <li>The script will run as normally, downloading that object’s image file and sending it along with the tweet text, and removing the image afterward.</li>
-  <li>Before closing, the script will once again read the index file. This time, however, the script will increment the index one higher, placing the following tweet object on-deck for the next time the script is run.</li>
+<li>Each time the script is run, the first thing it does is check the index file, which will return an number.</li>
+<li>The script will then parse the array of objects in the JSON file, and jump to the object corresponding to the number found in our index file.</li>
+<li>The script will run as normally, downloading that object's image file and sending it along with the tweet text, and removing the image afterward.</li>
+<li>Before closing, the script will once again read the index file. This time, however, the script will increment the index one higher, placing the following tweet object on-deck for the next time the script is run.</li>
 </ol>
-
 <p>A script utilizing this method could look like this:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>from tweepy import OAuthHandler
+<pre><code>from tweepy import OAuthHandler
 from tweepy import API
 import urllib.request
 import os
 import json
 
-consumer_key="XXXXXXXXXXX"
-consumer_secret="XXXXXXXXXXX"
-access_token="XXXXXXXXXXX"
-access_token_secret="XXXXXXXXXXX"
+consumer_key=&quot;XXXXXXXXXXX&quot;
+consumer_secret=&quot;XXXXXXXXXXX&quot;
+access_token=&quot;XXXXXXXXXXX&quot;
+access_token_secret=&quot;XXXXXXXXXXX&quot;
 
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -449,38 +405,69 @@ except:
 	print('Error, baby.')
 
 with open('index.txt', 'w') as indexNew:
-	indexNew.write("%d" % (vari + 1))
+	indexNew.write(&quot;%d&quot; % (vari + 1))
 	indexNew.close()
-</code></pre>
-</div>
-
-<p>(<a href="https://gist.github.com/scottythered/3f4f2aa553c914eb1b50b24b23da886b">Gist version</a>)</p>
-
-<p>The beauty of this method is that the script can run without relying on the <code class="highlighter-rouge">sleep</code> function. And since only it only performs one run-through each time, we can now schedule it to run as often or as infrequently as we like.</p>
-
-<p>The easiest way of scheduling this script would probably using <code class="highlighter-rouge">crontab</code>:</p>
-
+</code></pre><p>(<a href="https://gist.github.com/scottythered/3f4f2aa553c914eb1b50b24b23da886b">Gist version</a>)</p>
+<p>The beauty of this method is that the script can run without relying on the <code>sleep</code> function. And since only it only performs one run-through each time, we can now schedule it to run as often or as infrequently as we like.</p>
+<p>The easiest way of scheduling this script would probably using <code>crontab</code>:</p>
 <blockquote>
-  <p>Crontab (CRON TABle) is a file which contains the schedule of cron entries to be run and at specified times. […] A cron job or cron schedule is a specific set of execution instructions specifing day, time and command to execute. (<a href="http://www.adminschoice.com/crontab-quick-reference">Source</a>)</p>
+<p>Crontab (CRON TABle) is a file which contains the schedule of cron entries to be run and at specified times. [&hellip;] A cron job or cron schedule is a specific set of execution instructions specifing day, time and command to execute. (<a href="http://www.adminschoice.com/crontab-quick-reference">Source</a>)</p>
 </blockquote>
+<p>To open Crontab in your Unix/Linux shell, type <code>crontab -e</code> and follow the instructions. An example of this script running once a day at 10 am would look like:</p>
+<pre><code>0  10  *  *  *    [path to]/python3 [path to]/script.py
+</code></pre><p>Of course, we're back to the discussion of whether this particular computer will always be on, as to run the cron schedule.</p>
+<p>If you're absolutely paranoid, you might as well pay for a service that will schedule this for you. I currently pay $5 a month for the features of <a href="http://www.scottcarlson.info/you-should-make-a-twitter-bot/">PythonAnywhere</a>, which includes a cron scheduler for my set of virtual Python scripts:</p>
+<p><img src="http://www.scottcarlson.info/you-should-make-a-twitter-bot/img/twit4.png" alt="twit4"></p>
+<p>Money well spent? I'd say so.</p>
+<p>&gt;&gt; <a href="http://scottcarlson.info">Home</a></p>
 
-<p>To open Crontab in your Unix/Linux shell, type <code class="highlighter-rouge">crontab -e</code> and follow the instructions. An example of this script running once a day at 10 am would look like:</p>
+            </div>
+        </article>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>0  10  *  *  *    [path to]/python3 [path to]/script.py
-</code></pre>
-</div>
+        <hr />
 
-<p>Of course, we’re back to the discussion of whether this particular computer will always be on, as to run the cron schedule.</p>
+        <div class="post-info">
+  			</div>
 
-<p>If you’re absolutely paranoid, you might as well pay for a service that will schedule this for you. I currently pay $5 a month for the features of <a href="">PythonAnywhere</a>, which includes a cron scheduler for my set of virtual Python scripts. Money well spent? I’d say so.</p>
+        
+    </main>
 
-<p><img src="img/twit4.png" alt="twit4" /></p>
+            </div>
 
-<p><em>I am Scott Carlson, the Metadata Coordinator of Fondren Library at Rice University. I received my MLIS from Dominican University (River Forest, IL) and an Archives Certificate in Digital Stewardship from Simmons College (Boston, MA).</em></p>
+            
+                <footer class="footer">
+  <div class="footer__inner">
+      <div>
+          &nbsp; <a href="https://twitter.com/scottythered" target="_blank" rel="noopener" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a> &nbsp;&nbsp; <a href="mailto:nobody@example.com" target="_blank" rel="noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;&nbsp; <a href="https://github.com/scottythered" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a> &nbsp;
+      </div>
+  </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+                <span><a href="/">Scott Carlson</a></span>
+            
+            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+        </div>
+    </div>
+</footer>
 
-<h2><a href="http://scottcarlson.info">Home</a></h2>
+            
+        </div>
 
-</div>
+        
 
-</body>
+
+
+
+<script type="text/javascript" src="/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+
+
+
+    </body>
 </html>
